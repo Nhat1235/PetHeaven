@@ -1,0 +1,407 @@
+<html lang="zxx" xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+	crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<head>
+<style type="text/css">
+p {
+	font-family: Lato;
+}
+
+header {
+	background-color: rgba(32, 32, 41, 0.918);
+	height: 110px;
+}
+
+h3 {
+	padding-top: 15px;
+	margin-left: 30px;
+	color: white;
+}
+
+h4 {
+	margin-left: 30px;
+	color: white;
+}
+
+footer {
+	margin-top: 20px;
+	background-color: rgba(32, 32, 41, 0.918);
+	height: 70px;
+	clear: both;
+}
+
+.div {
+	margin-top: 0px;
+	float: right;
+}
+
+.div1 {
+	padding: 0;
+	float: right;
+}
+
+body {
+	margin: 0;
+	padding: 0px;
+	width: 100%;
+	height: 100%;
+}
+
+aside {
+	padding-top: 10px;
+	display: block;
+	float: left;
+	width: 20%;
+}
+
+article {
+	padding-top: 10px;
+	height: auto;
+	width: 80%;
+	float: right;
+}
+/* The side navigation menu */
+.sidebar {
+	margin: 0;
+	padding: 0;
+	width: 300px;
+	background-color: #f1f1f1;
+	height: 100%; /* Full-height: remove this if you want "auto" height */
+	overflow: auto;
+}
+
+/* Sidebar links */
+.sidebar a {
+	display: block;
+	color: black;
+	padding: 16px;
+	text-decoration: none;
+}
+
+/* Active/current link */
+.sidebar a.active {
+	background-color: rgba(32, 32, 41, 0.918);
+	color: white;
+	font: bold;
+	font-weight: bold;
+}
+
+/* Links on mouse-over */
+.sidebar
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+a
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:hover
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:not
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+(
+.active
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+)
+{
+background-color
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+#555
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;
+color
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+white
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;
+}
+@media screen and (max-height: 450px) {
+	.sidenav {
+		padding-top: 15px;
+	}
+	.sidenav a {
+		font-size: 18px;
+	}
+}
+/* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+div.content {
+	margin-left: 200px;
+	padding: 1px 16px;
+	height: 1000px;
+}
+
+/* On screens that are less than 700px wide, make the sidebar into a topbar */
+@media screen and (max-width: 700px) {
+	.sidebar {
+		width: 100%;
+		height: auto;
+		position: relative;
+	}
+	.sidebar a {
+		float: left;
+	}
+	div.content {
+		margin-left: 0;
+	}
+}
+
+/* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+@media screen and (max-width: 400px) {
+	.sidebar a {
+		text-align: center;
+		float: none;
+	}
+}
+</style>
+</head>
+<body>
+
+	<header>
+		<div class="">
+			<h3>Web truyện | Admin Page</h3>
+			<p></p>
+		</div>
+	</header>
+	<nav></nav>
+	<aside>
+		<div class="sidebar">
+			<a class="active fa fa-home" th:href="@{/index}">&nbsp; Trang chủ</a>
+			<a class="active fa fa-clock-o" th:href="@{/index1}">&nbsp; Trang
+				chuyện mới</a> <a class="active fa fa-code" th:href="@{/admin/index}"> &nbsp; Chức
+				năng admin</a> <a class="" th:href="@{/admin/index}">+ Quản lý tài khoản</a>
+				<a class="" th:href="@{/admin/read}">+ Quản lý thông tin truyện</a>
+		</div>
+	</aside>
+	<article>
+		<div>
+			<center>
+				<h1>Sửa tài khoản đăng nhập</h1>
+			</center>
+			<br>
+
+
+			<form th:action="@{/updateAccount/{code}}" th:object="${account}"
+				method="post">
+
+				<table style="width: 90%" class="form-group">
+					<tr>
+						ID
+						<td><input class="form-control" type="text" th:field="*{id}" /></td>
+					</tr>
+
+					<tr>
+						<td><label>Your Username </label></td>
+					</tr>
+
+					<tr>
+						<td><input maxlength="15" name="username"
+							class="form-control" type="text" th:field="*{username}" /></td>
+					</tr>
+
+					<tr>
+						<td class="alert alert-danger"
+							th:if="${#fields.hasErrors('username')}" th:errors="*{username}"
+							id="Error">Name Error</td>
+					</tr>
+
+					<tr>
+						<td><label>Email</label></td>
+					</tr>
+
+					<tr>
+						<td><input maxlength="50" class="form-control" name="email"
+							type="email" th:field="*{email}" /></td>
+					</tr>
+					<tr>
+						<td class="alert alert-danger"
+							th:if="${#fields.hasErrors('email')}" th:errors="*{email}">email
+							Error</td>
+					</tr>
+
+					<tr>
+						<td><label>Password </label></td>
+					</tr>
+
+					<tr>
+						<td><input maxlength="15" class="form-control"
+							name="password" type="text" th:field="*{password}" /></td>
+					</tr>
+
+					<tr>
+						<td class="alert alert-danger"
+							th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password
+							Error</td>
+					</tr>
+					<tr>
+						<td>Role</td></tr>
+						<tr><td><input class="form-control" type="text"
+							th:field="*{role}" /></td>
+					</tr>
+
+
+					<tr>
+						<td><button class="btn btn-primary">Update</button></td>
+					</tr>
+
+
+
+				</table>
+			</form>
+		</div>
+	</article>
+</body>
+<footer></footer>
+</html>

@@ -1,0 +1,345 @@
+<!--
+	Author: W3layouts
+	Author URL: http://w3layouts.com
+	License: Creative Commons Attribution 3.0 Unported
+	License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+
+<!DOCTYPE html>
+<html lang="zxx" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css"
+	integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX"
+	crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css"
+	integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX"
+	crossorigin="anonymous">
+<style type="text/css">
+.grid-container {
+	display: grid;
+}
+/*the container must be positioned relative:*/
+.custom-select {
+  position: relative;
+  font-family: Arial;
+}
+
+.custom-select select {
+  display: none; /*hide original SELECT element:*/
+}
+
+.select-selected {
+  background-color: DodgerBlue;
+}
+
+/*style the arrow inside the select element:*/
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
+}
+
+/*point the arrow upwards when the select box is open (active):*/
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #fff transparent;
+  top: 7px;
+}
+
+/*style the items (options), including the selected item:*/
+.select-items div,.select-selected {
+  color: #ffffff;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+  user-select: none;
+}
+
+/*style items (options):*/
+.select-items {
+  position: absolute;
+  background-color: DodgerBlue;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+/*hide the items when the select box is closed:*/
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover, .same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+</style>
+
+<title>WebTruyen is the web to read stories| Home :: WebTruyen</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<meta name="keywords"
+	content="Weblog a Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+
+<script>
+	addEventListener("load", function() {
+		setTimeout(hideURLbar, 0);
+	}, false);
+
+	function hideURLbar() {
+		window.scrollTo(0, 1);
+	}
+	function wordLimit() {
+
+		var jobValue = document.getElementById('wordIntent').value
+		var words = jobValue.value.split(/\s+/);
+		var maxWords = 2;
+		var numWords = words.length;
+		if (numWords > maxWords) {
+			jobValue.preventDefault();
+		}
+	}
+</script>
+
+<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+<link rel="stylesheet" href="js/css/jquery.desoslide.css">
+<link href="css/style.css" rel='stylesheet' type='text/css' />
+<link href="stacss/fontawesome-all.css" rel="stylesheet">
+<link
+	href="//fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800"
+	rel="stylesheet">
+</head>
+
+<body>
+	<!--Header-->
+
+	<header>
+		<div class="header_top" id="home">
+			<nav class="navbar navbar-expand-lg navbar-light bg-light">
+				<button class="navbar-toggler navbar-toggler-right mx-auto"
+					type="button" data-toggle="collapse"
+					data-target="#navbarSupportedContent"
+					aria-controls="navbarSupportedContent" aria-expanded="false"
+					aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav mr-auto">
+						<li class="nav-item active"><a class="nav-link"
+							th:href="@{/}">Trang chủ <span class="sr-only">(current)</span>
+						</a></li>
+						<li class="nav-item"><a class="nav-link" href="#">Mới
+								nhất</a></li>
+						<!-- <li class="nav-item">
+								<a class="nav-link" href="contact.html">Contact</a>
+							</li> -->
+					</ul>
+					<form action="#" method="post"
+						class="form-inline my-2 my-lg-0 header-search">
+						<input class="form-control mr-sm-2" type="search"
+							placeholder="Tìm truyện..." name="Search" required="">
+						<button class="btn btn-success" type="submit">
+							<span class="fas fa-search"></span>
+						</button>
+					</form>
+				</div>
+			</nav>
+
+		</div>
+	</header>
+	<!--//header-->
+
+
+	<!--/main-->
+	<div class="col-xs-12">
+		<a class="truyen-title" th:each="chap : ${chap}"><span
+			th:text="*{chap.chapterName}"></span></a>
+		<h2 class="text-center" th:each="chap : ${chap}">
+			<a class="chapter-title"> <span class="chapter-text"
+				th:text="*{chap.chapterName}"></span>
+			</a>
+			<p></p>
+		</h2>
+		<div class="text-center">
+			<a class="btn btn-success btn-chapter-nav disabled"
+				href="javascript:void(0)" title="Không có chương trước"
+				id="prev_chap" data-cid=""> <span
+				class="glyphicon glyphicon-chevron-left"></span> <span
+				class="hidden-xs">Chương </span>trước
+			</a>
+			<select class="btn-group custom-select" style="width:400px;">
+			<option  th:each="chap1 : ${chap1}" th:text="*{chap1.chapterName}"></option>
+			</select>
+			<a class="btn btn-success btn-chapter-nav"
+				href="https://truyenfull.vn/choc-tuc-vo-yeu-mua-mot-tang-mot-150520/chuong-2/"
+				title="Chương 2" id="next_chap" data-cid="1871252"> <span
+				class="hidden-xs">Chương </span>tiếp <span
+				class="glyphicon glyphicon-chevron-right"></span>
+			</a>
+		</div>
+		<div style="display: box; margin-top: 70px; margin-left: 70px;margin-right: 70px"
+			th:each="chap : ${chap}">
+			<span th:text="*{chap.content}"></span>
+		</div>
+		<br>
+		<div
+			class="ads-responsive incontent-ad ad-bghighlight mgid-iab mgid-iab-mobile"
+			id="ads-chapter-longtop">
+			<div id="M553328ScriptRootC863757"></div>
+			<script src="https://jsc.adskeeper.co.uk/t/r/truyenfull.vn.863757.js"
+				async=""></script>
+		</div>
+		<hr class="chapter-end" id="chapter-end-bot">
+		<div class="text-center">
+			<a class="btn btn-success btn-chapter-nav disabled"
+				href="javascript:void(0)" title="Không có chương trước"
+				id="prev_chap" data-cid=""> <span
+				class="glyphicon glyphicon-chevron-left"></span> <span
+				class="hidden-xs">Chương </span>trước
+			</a> 
+			
+			<select class="btn-group custom-select" style="width:400px;">
+			<option  th:each="chap1 : ${chap1}" th:text="*{chap1.chapterName}"></option>
+			</select>
+			
+			<a class="btn btn-success btn-chapter-nav"
+				href="https://truyenfull.vn/choc-tuc-vo-yeu-mua-mot-tang-mot-150520/chuong-2/"
+				title="Chương 2" id="next_chap" data-cid="1871252"> <span
+				class="hidden-xs">Chương </span>tiếp <span
+				class="glyphicon glyphicon-chevron-right"></span>
+			</a>
+		</div>
+	</div>
+
+	<!--//main-->
+
+	</section>
+
+	</div>
+	<!---->
+	<!-- js -->
+	<script src="js/jquery-2.2.3.min.js"></script>
+	<!-- //js -->
+	<!-- desoslide-JavaScript -->
+	<script src="js/jquery.desoslide.js"></script>
+	<script>
+		$('#demo1_thumbs').desoSlide({
+			main : {
+				container : '#demo1_main_image',
+				cssClass : 'img-responsive'
+			},
+			effect : 'sideFade',
+			caption : true
+		});
+	</script>
+
+	<!-- requried-jsfiles-for owl -->
+	<script>
+		$(window).load(function() {
+			$("#flexiselDemo1").flexisel({
+				visibleItems : 3,
+				animationSpeed : 1000,
+				autoPlay : true,
+				autoPlaySpeed : 3000,
+				pauseOnHover : true,
+				enableResponsiveBreakpoints : true,
+				responsiveBreakpoints : {
+					portrait : {
+						changePoint : 480,
+						visibleItems : 1
+					},
+					landscape : {
+						changePoint : 640,
+						visibleItems : 2
+					},
+					tablet : {
+						changePoint : 768,
+						visibleItems : 3
+					}
+				}
+			});
+
+		});
+	</script>
+	<script>
+		$(window).load(function() {
+			$("#flexiselDemo2").flexisel({
+				visibleItems : 3,
+				animationSpeed : 1000,
+				autoPlay : true,
+				autoPlaySpeed : 3000,
+				pauseOnHover : true,
+				enableResponsiveBreakpoints : true,
+				responsiveBreakpoints : {
+					portrait : {
+						changePoint : 480,
+						visibleItems : 1
+					},
+					landscape : {
+						changePoint : 640,
+						visibleItems : 2
+					},
+					tablet : {
+						changePoint : 768,
+						visibleItems : 3
+					}
+				}
+			});
+
+		});
+	</script>
+	<script src="js/jquery.flexisel.js"></script>
+	<!-- //password-script -->
+	<!--/ start-smoth-scrolling -->
+	<script src="js/move-top.js"></script>
+	<script src="js/easing.js"></script>
+	<script>
+		jQuery(document).ready(function($) {
+			$(".scroll").click(function(event) {
+				event.preventDefault();
+				$('html,body').animate({
+					scrollTop : $(this.hash).offset().top
+				}, 900);
+			});
+		});
+	</script>
+	<!--// end-smoth-scrolling -->
+
+	<script>
+		$(document).ready(function() {
+
+			var defaults = {
+				containerID : 'toTop', // fading element id
+				containerHoverID : 'toTopHover', // fading element hover id
+				scrollSpeed : 1200,
+				easingType : 'linear'
+			};
+
+			$().UItoTop({
+				easingType : 'easeOutQuart'
+			});
+
+		});
+	</script>
+	<a href="#home" class="scroll" id="toTop" style="display: block;">
+		<span id="toTopHover" style="opacity: 1;"> </span>
+	</a>
+
+	<!-- //Custom-JavaScript-File-Links -->
+	<script src="js/bootstrap.js"></script>
+
+
+</body>
+
+</html>

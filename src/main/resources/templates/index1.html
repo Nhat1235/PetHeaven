@@ -1,0 +1,427 @@
+<!--
+	Author: W3layouts
+	Author URL: http://w3layouts.com
+	License: Creative Commons Attribution 3.0 Unported
+	License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+
+<!DOCTYPE html>
+<html lang="zxx" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css"
+	integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX"
+	crossorigin="anonymous">
+<style type="text/css">
+.grid-container {
+	display: grid;
+}
+</style>
+
+<title>WebTruyen is the web to read stories| Home :: WebTruyen</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<meta name="keywords"
+	content="Weblog a Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+
+<script>
+	addEventListener("load", function() {
+		setTimeout(hideURLbar, 0);
+	}, false);
+
+	function hideURLbar() {
+		window.scrollTo(0, 1);
+	}
+	function wordLimit() {
+
+		var jobValue = document.getElementById('wordIntent').value
+		var words = jobValue.value.split(/\s+/);
+		var maxWords = 2;
+		var numWords = words.length;
+		if (numWords > maxWords) {
+			jobValue.preventDefault();
+		}
+	}
+</script>
+
+<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+<link rel="stylesheet" href="js/css/jquery.desoslide.css">
+<link href="css/style.css" rel='stylesheet' type='text/css' />
+<link href="stacss/fontawesome-all.css" rel="stylesheet">
+<link
+	href="//fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800"
+	rel="stylesheet">
+</head>
+
+<body>
+	<!--Header-->
+
+	<header>
+		<div class="top-bar_sub_w3layouts container-fluid ">
+			<div class="row">
+				<div class="col-md-4 logo text-left">
+					<a class="navbar-brand" href=""> <i class="fab fa-linode"></i>
+						WebTruyen
+					</a>
+				</div>
+				<div class="col-md-4 top-forms text-center mt-lg-3 mt-md-1 mt-0">
+					<span>Chào mừng trở lại !</span> <a class="mx-lg-4 mx-md-2  mx-1">
+						<a th:href="@{/login}"> <i class="fas fa-lock"></i> Sign In
+					</a>
+					</a> <span>or</span> <a> <a th:href="@{/Dangky}"> <i
+							class="far fa-user"></i> Register Now
+					</a>
+					</a>
+				</div>
+				<div class="col-md-4 log-icons text-right">
+
+					<ul class="social_list1 mt-3">
+
+						<li><a href="https://www.facebook.com/groups/12giodem"
+							class="facebook1 mx-2"> <i class="fab fa-facebook-f"></i>
+						</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="header_top" id="home">
+			<nav class="navbar navbar-expand-lg navbar-light bg-light">
+				<button class="navbar-toggler navbar-toggler-right mx-auto"
+					type="button" data-toggle="collapse"
+					data-target="#navbarSupportedContent"
+					aria-controls="navbarSupportedContent" aria-expanded="false"
+					aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav mr-auto">
+						<li class="nav-item active"><a class="nav-link"
+							th:href="@{/}">Trang chủ <span class="sr-only">(current)</span>
+						</a></li>
+						<li class="nav-item"><a class="nav-link" th:href="@{/New}">Mới nhất</a></li>
+						<li class="nav-item dropdown"><a
+							class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+							role="button" data-toggle="dropdown" aria-haspopup="true"
+							aria-expanded="false"> Thể loại </a>
+							<div>
+								<div class="dropdown-menu">
+									<a class="dropdown-item" th:each="ct : ${ca}"
+										th:href="@{'/Category/'+${ct.id}}" th:text="${ct.name}"></a>
+								</div>
+							</div>
+							</li>
+						<!-- <li class="nav-item">
+								<a class="nav-link" href="contact.html">Contact</a>
+							</li> -->
+
+					</ul>
+					<form action="#" method="post"
+						class="form-inline my-2 my-lg-0 header-search">
+						<input class="form-control mr-sm-2" type="search"
+							placeholder="Tìm truyện..." name="Search" required="">
+						<button class="btn btn1 my-3 my-sm-0" type="submit">
+							<span class="fas fa-search"></span>
+						</button>
+					</form>
+
+
+
+				</div>
+			</nav>
+
+		</div>
+	</header>
+	<!--//header-->
+
+
+	<section class="bottom-slider">
+		<div class="course_demo1">
+			<ul id="flexiselDemo1">
+				<li>
+					<div class="blog-item">
+						<img
+							src="https://truyen.tangthuvien.vn/images/intro/ttv-translate-1.jpg"
+							alt="" class="img-fluid w-100 p-3" style="height: 300px" />
+
+						<div class="floods-text">
+							<h3>
+								Web convert truyện <span>Admin <label>|</label> <i>Long
+										Nhật</i>
+								</span>
+							</h3>
+
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="blog-item">
+						<img src="https://truyen.tangthuvien.vn/images/slide7.jpg" alt=""
+							class="img-fluid w-100 p-3" style="height: 300px" />
+						<div class="floods-text">
+							<h3>
+								Web convert truyện <span>Admin <label>|</label> <i>Long
+										Nhật</i>
+								</span>
+							</h3>
+
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="blog-item">
+						<img src="https://truyen.tangthuvien.vn/images/slide9.jpg" alt=""
+							class="img-fluid w-100 p-3" style="height: 300px" />
+						<div class="floods-text">
+							<h3>
+								Web convert truyện <span>Admin <label>|</label> <i>Long
+										Nhật</i>
+								</span>
+							</h3>
+
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="blog-item">
+						<img src="https://truyen.tangthuvien.vn/images/slide3.jpg" alt=""
+							class="img-fluid w-100 p-3" style="height: 300px" />
+						<div class="floods-text">
+							<h3>
+								Web convert truyện <span>Admin <label>|</label> <i>Long
+										Nhật</i>
+								</span>
+							</h3>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="blog-item">
+						<img
+							src="https://ytehagiang.org.vn/t/800/600/+photos+thang-11+tac-hai-thuoc-la.jpg"
+							alt="" class="img-fluid w-100 p-3" style="height: 300px" />
+						<div class="floods-text">
+							<h3>
+								Tác hại của thuốc lá <span>Admin <label>|</label> <i>Long
+										Nhật</i>
+								</span>
+							</h3>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</section>
+	<!--/main-->
+
+	<section class="main-content-w3layouts-agileits">
+		<div class="container">
+			<h3 class="tittle">Truyện Đọc Mới Nhất</h3>
+			<div class="inner-sec">
+
+				<!--left-->
+				<div class="grid-container">
+
+					<div class="row">
+
+						<div style="padding: 10px" th:each="cat : ${list}"
+							class="col-sm-4 card border">
+
+							<a class="height" th:href="@{'/single/'+${cat.code}}"> <img
+								th:src="*{cat.photo}" class="card-img-top img-fluid " alt="" /></a>
+
+							<div class="card-body">
+
+								<ul class="blog-icons my-3">
+									<li><a> <i class="far fa-calendar-alt"> Date: </i> <span
+											th:text="*{cat.date}"></span></a></li>
+									<li><a> <span>Views:</span> 
+									<span
+											th:text="*{cat.views}"></span></a></li>
+								</ul>
+								<h5 class="card-title">
+									<a th:href="@{'/single/'+${cat.code}}"><span
+										th:text="*{cat.name}"></span></a>
+								</h5>
+
+								<div>
+									<a th:href="@{'/single/'+${cat.code}}"
+										class="btn btn-primary read-m">Read More</a>
+								</div>
+							</div>
+
+						</div>
+					</div>
+					<ul class="pagination justify-content-left mt-4">
+						<li class="page-item "><a class="page-link" href="#"
+							tabindex="-1">Previous</a></li>
+						<li class="page-item"><a class="page-link" href="#">1</a></li>
+						<li class="page-item"><a class="page-link" href="#">2</a></li>
+						<li class="page-item"><a class="page-link" href="#">3</a></li>
+						<li class="page-item"><a class="page-link" href="#">Next</a>
+						</li>
+					</ul>
+				</div>
+
+			</div>
+		</div>
+
+	</section>
+	<!--//main-->
+
+	<!--footer-->
+	<footer>
+		<div class="container">
+
+			<!-- footer -->
+			<div class="footer-cpy text-center">
+				<div class="footer-social">
+					<div class="copyrighttop">
+						<ul>
+							<li class="mx-3"><a class="facebook" href="#"> <i
+									class="fab fa-facebook-f"></i> <span>Facebook</span>
+							</a></li>
+							<li><a class="facebook" href="#"> <i
+									class="fab fa-twitter"></i> <span>Twitter</span>
+							</a></li>
+							<li class="mx-3"><a class="facebook" href="#"> <i
+									class="fab fa-google-plus-g"></i> <span>Google+</span>
+							</a></li>
+							<li><a class="facebook" href="#"> <i
+									class="fab fa-pinterest-p"></i> <span>Pinterest</span>
+							</a></li>
+						</ul>
+
+					</div>
+				</div>
+				<div class="w3layouts-agile-copyrightbottom">
+					<p>
+						© 2018 Weblog. All Rights Reserved | Design by <a
+							href="http://w3layouts.com/">W3layouts</a>
+					</p>
+
+				</div>
+			</div>
+
+			<!-- //footer -->
+		</div>
+	</footer>
+	<!---->
+	<!-- js -->
+	<script src="js/jquery-2.2.3.min.js"></script>
+	<!-- //js -->
+	<!-- desoslide-JavaScript -->
+	<script src="js/jquery.desoslide.js"></script>
+	<script>
+		$('#demo1_thumbs').desoSlide({
+			main : {
+				container : '#demo1_main_image',
+				cssClass : 'img-responsive'
+			},
+			effect : 'sideFade',
+			caption : true
+		});
+	</script>
+
+	<!-- requried-jsfiles-for owl -->
+	<script>
+		$(window).load(function() {
+			$("#flexiselDemo1").flexisel({
+				visibleItems : 3,
+				animationSpeed : 1000,
+				autoPlay : true,
+				autoPlaySpeed : 3000,
+				pauseOnHover : true,
+				enableResponsiveBreakpoints : true,
+				responsiveBreakpoints : {
+					portrait : {
+						changePoint : 480,
+						visibleItems : 1
+					},
+					landscape : {
+						changePoint : 640,
+						visibleItems : 2
+					},
+					tablet : {
+						changePoint : 768,
+						visibleItems : 3
+					}
+				}
+			});
+
+		});
+	</script>
+	<script>
+		$(window).load(function() {
+			$("#flexiselDemo2").flexisel({
+				visibleItems : 3,
+				animationSpeed : 1000,
+				autoPlay : true,
+				autoPlaySpeed : 3000,
+				pauseOnHover : true,
+				enableResponsiveBreakpoints : true,
+				responsiveBreakpoints : {
+					portrait : {
+						changePoint : 480,
+						visibleItems : 1
+					},
+					landscape : {
+						changePoint : 640,
+						visibleItems : 2
+					},
+					tablet : {
+						changePoint : 768,
+						visibleItems : 3
+					}
+				}
+			});
+
+		});
+	</script>
+	<script src="js/jquery.flexisel.js"></script>
+	<!-- //password-script -->
+	<!--/ start-smoth-scrolling -->
+	<script src="js/move-top.js"></script>
+	<script src="js/easing.js"></script>
+	<script>
+		jQuery(document).ready(function($) {
+			$(".scroll").click(function(event) {
+				event.preventDefault();
+				$('html,body').animate({
+					scrollTop : $(this.hash).offset().top
+				}, 900);
+			});
+		});
+	</script>
+	<!--// end-smoth-scrolling -->
+
+	<script>
+		$(document).ready(function() {
+
+			var defaults = {
+				containerID : 'toTop', // fading element id
+				containerHoverID : 'toTopHover', // fading element hover id
+				scrollSpeed : 1200,
+				easingType : 'linear'
+			};
+
+			$().UItoTop({
+				easingType : 'easeOutQuart'
+			});
+
+		});
+	</script>
+	<a href="#home" class="scroll" id="toTop" style="display: block;">
+		<span id="toTopHover" style="opacity: 1;"> </span>
+	</a>
+
+	<!-- //Custom-JavaScript-File-Links -->
+	<script src="js/bootstrap.js"></script>
+
+
+</body>
+
+</html>

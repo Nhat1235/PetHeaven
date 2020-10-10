@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css"
+	integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX"
+	crossorigin="anonymous">
+<head>
+<title>Spring Security Example</title>
+<style type="text/css">
+body, html {
+	height: 100%;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+	max-width: 1500px;
+	margin: auto;
+}
+
+* {
+	box-sizing: border-box;
+}
+/* Add styles to the form container */
+.container {
+	position: absolute;
+	right: 0;
+	margin: 20px;
+	max-width: 300px;
+	padding: 16px;
+	background-color: white;
+}
+
+.bg-img {
+	margin-left: 200px;
+	width: 75%;
+	height: 200px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+	background-position: center;
+}
+</style>
+</head>
+<body>
+	<div>
+		<img class="bg-img"
+			src="https://png.pngtree.com/thumb_back/fh260/background/20190223/ourmid/pngtree-pure-color-watercolor-graffiti-gradient-background-board-design-board-design-image_66713.jpg"></img>
+
+		<div th:each="cat : ${list}" class="container">
+			<ul>
+				<li>Code: <span th:text="*{cat.code}"></span></li>
+				<li><img th:src="*{cat.photo}" width="110" height="150"></img></li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>

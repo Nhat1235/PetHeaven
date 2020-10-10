@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <meta charset='utf-8'>
+  <title>TestNG reports</title>
+
+    <link type="text/css" href="testng-reports1.css" rel="stylesheet" id="ultra" />
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" id="retro" disabled="false"/>
+    <script type="text/javascript" src="jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="testng-reports.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      var suiteTableInitFunctions = new Array();
+      var suiteTableData = new Array();
+    </script>
+    <!--
+      <script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
+     -->
+  </head>
+
+  <body>
+    <div class="top-banner-root">
+      <span class="top-banner-title-font">Test results</span>
+      <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
+      <br/>
+      <span class="top-banner-font-1">1 suite, 3 failed tests</span>
+    </div> <!-- top-banner-root -->
+    <div class="navigator-root">
+      <div class="navigator-suite-header">
+        <span>All suites</span>
+        <a href="#" title="Collapse/expand all the suites" class="collapse-all-link">
+          <img src="collapseall.gif" class="collapse-all-icon">
+          </img> <!-- collapse-all-icon -->
+        </a> <!-- collapse-all-link -->
+      </div> <!-- navigator-suite-header -->
+      <div class="suite">
+        <div class="rounded-window">
+          <div class="suite-header light-rounded-window-top">
+            <a href="#" panel-name="suite-Default_suite" class="navigator-link">
+              <span class="suite-name border-failed">Default suite</span>
+            </a> <!-- navigator-link -->
+          </div> <!-- suite-header light-rounded-window-top -->
+          <div class="navigator-suite-content">
+            <div class="suite-section-title">
+              <span>Info</span>
+            </div> <!-- suite-section-title -->
+            <div class="suite-section-content">
+              <ul>
+                <li>
+                  <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
+                    <span>C:\Users\longn\AppData\Local\Temp\testng-eclipse--1125589931\testng-customsuite.xml</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="testlist-Default_suite" class="navigator-link ">
+                    <span class="test-stats">1 test</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="group-Default_suite" class="navigator-link ">
+                    <span>1 group</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="times-Default_suite" class="navigator-link ">
+                    <span>Times</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="reporter-Default_suite" class="navigator-link ">
+                    <span>Reporter output</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="ignored-methods-Default_suite" class="navigator-link ">
+                    <span>Ignored methods</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="chronological-Default_suite" class="navigator-link ">
+                    <span>Chronological view</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+              </ul>
+            </div> <!-- suite-section-content -->
+            <div class="result-section">
+              <div class="suite-section-title">
+                <span>Results</span>
+              </div> <!-- suite-section-title -->
+              <div class="suite-section-content">
+                <ul>
+                  <li>
+                    <span class="method-stats">28 methods, 3 failed,   25 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Default_suite" class="hide-methods failed suite-Default_suite"> (hide)</a> <!-- hide-methods failed suite-Default_suite -->
+                      <a href="#" panel-name="suite-Default_suite" class="show-methods failed suite-Default_suite"> (show)</a> <!-- show-methods failed suite-Default_suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Default_suite">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.example.demo.test.testtentruycap" class="method navigator-link" hash-for-method="Signup1">Signup1</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.example.demo.test.testtentruycap" class="method navigator-link" hash-for-method="Signup11">Signup11</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.example.demo.test.testtentruycap" class="method navigator-link" hash-for-method="Signup12">Signup12</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Default_suite -->
+                  </li>
+                  <li>
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-Default_suite" class="hide-methods passed suite-Default_suite"> (hide)</a> <!-- hide-methods passed suite-Default_suite -->
+                      <a href="#" panel-name="suite-Default_suite" class="show-methods passed suite-Default_suite"> (show)</a> <!-- show-methods passed suite-Default_suite -->
+                    </span>
+                    <div class="method-list-content passed suite-Default_suite">
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.example.demo.test.testtentruycap" class="method navigator-link" hash-for-method="Signup10">Signup10</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.example.demo.test.testtentruycap" class="method navigator-link" hash-for-method="Signup13">Signup13</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.example.demo.test.testtentruycap" class="method navigator-link" hash-for-method="Signup2">Signup2</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.example.demo.test.testtentruycap" class="method navigator-link" hash-for-method="Signup3">Signup3</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.example.demo.test.testtentruycap" class="method navigator-link" hash-for-method="Signup4">Signup4</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.example.demo.test.testtentruycap" class="method navigator-link" hash-for-method="Signup5">Signup5</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.example.demo.test.testtentruycap" class="method navigator-link" hash-for-method="Signup6">Signup6</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.example.demo.test.testtentruycap" class="method navigator-link" hash-for-method="Signup7">Signup7</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.example.demo.test.testtentruycap" class="method navigator-link" hash-for-method="Signup8">Signup8</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.example.demo.test.testtentruycap" class="method navigator-link" hash-for-method="Signup9">Signup9</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.example.demo.test.testtentruycap" class="method navigator-link" hash-for-method="dangky1">dangky1</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.example.demo.test.testtentruycap" class="method navigator-link" hash-for-method="dangky10">dangky10</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.example.demo.test.testtentruycap" class="method navigator-link" hash-for-method="dangky11">dangky11</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.example.demo.test.testtentruycap" class="method navigator-link" hash-for-method="dangky2">dangky2</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.example.demo.test.testtentruycap" class="method navigator-link" hash-for-method="dangky3">dangky3</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.example.demo.test.testtentruycap" class="method navigator-link" hash-for-method="dangky4">dangky4</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.example.demo.test.testtentruycap" class="method navigator-link" hash-for-method="dangky5">dangky5</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.example.demo.test.testtentruycap" class="method navigator-link" hash-for-method="dangky6">dangky6</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.example.demo.test.testtentruycap" class="method navigator-link" hash-for-method="dangky7">dangky7</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.example.demo.test.testtentruycap" class="method navigator-link" hash-for-method="dangky8">dangky8</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.example.demo.test.testtentruycap" class="method navigator-link" hash-for-method="dangky9">dangky9</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.example.demo.test.testtentruycap" class="method navigator-link" hash-for-method="email1">email1</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.example.demo.test.testtentruycap" class="method navigator-link" hash-for-method="email2">email2</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.example.demo.test.testtentruycap" class="method navigator-link" hash-for-method="email3">email3</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.example.demo.test.testtentruycap" class="method navigator-link" hash-for-method="email4">email4</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-Default_suite -->
+                  </li>
+                </ul>
+              </div> <!-- suite-section-content -->
+            </div> <!-- result-section -->
+          </div> <!-- navigator-suite-content -->
+        </div> <!-- rounded-window -->
+      </div> <!-- suite -->
+    </div> <!-- navigator-root -->
+    <div class="wrapper">
+      <div class="main-panel-root">
+        <div panel-name="suite-Default_suite" class="panel Default_suite">
+          <div class="suite-Default_suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">com.example.demo.test.testtentruycap</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="Signup1">
+                  </a> <!-- Signup1 -->
+                  <span class="method-name">Signup1</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [*Must contain 9 to 15 character and at least 1 letter and 1 capitalize letter and 1 number Ex: longnhat12345] but found [*Name is mandatory
+*Must contain 9 to 15 character and at least 1 letter and 1 capitalize letter and 1 number Ex: longnhat12345]
+	at org.testng.Assert.fail(Assert.java:97)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:136)
+	at org.testng.Assert.assertEquals(Assert.java:118)
+	at org.testng.Assert.assertEquals(Assert.java:575)
+	at org.testng.Assert.assertEquals(Assert.java:585)
+	at com.example.demo.test.testtentruycap.Signup1(testtentruycap.java:79)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:821)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1540)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:588)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1214)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1136)
+	at org.testng.TestNG.runSuites(TestNG.java:1066)
+	at org.testng.TestNG.run(TestNG.java:1034)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+
+</div> <!-- stack-trace -->
+                  <em>
+(Khong nhap ten truy cap)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="Signup11">
+                  </a> <!-- Signup11 -->
+                  <span class="method-name">Signup11</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [*Must contain 8 to 15 character and at least 1 word and 1 number Ex: longnhat12345] but found [*Must contain 9 to 15 character and at least 1 letter and 1 capitalize letter and 1 number Ex: longnhat12345]
+	at org.testng.Assert.fail(Assert.java:97)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:136)
+	at org.testng.Assert.assertEquals(Assert.java:118)
+	at org.testng.Assert.assertEquals(Assert.java:575)
+	at org.testng.Assert.assertEquals(Assert.java:585)
+	at com.example.demo.test.testtentruycap.Signup11(testtentruycap.java:359)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:821)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1540)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:588)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1214)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1136)
+	at org.testng.TestNG.runSuites(TestNG.java:1066)
+	at org.testng.TestNG.run(TestNG.java:1034)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+
+</div> <!-- stack-trace -->
+                  <em>
+(Khong nhap ten truy cap)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="Signup12">
+                  </a> <!-- Signup12 -->
+                  <span class="method-name">Signup12</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [Must contain 9 to 15 character and at least 1 letter and 1 capitalize letter and 1 number Ex: longnhat12345] but found [*Must contain 9 to 15 character and at least 1 letter and 1 capitalize letter and 1 number Ex: longnhat12345]
+	at org.testng.Assert.fail(Assert.java:97)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:136)
+	at org.testng.Assert.assertEquals(Assert.java:118)
+	at org.testng.Assert.assertEquals(Assert.java:575)
+	at org.testng.Assert.assertEquals(Assert.java:585)
+	at com.example.demo.test.testtentruycap.Signup12(testtentruycap.java:387)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:821)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1540)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:588)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1214)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1136)
+	at org.testng.TestNG.runSuites(TestNG.java:1066)
+	at org.testng.TestNG.run(TestNG.java:1034)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+
+</div> <!-- stack-trace -->
+                  <em>
+(Khong nhap ten truy cap)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Default_suite-class-failed -->
+          <div class="suite-Default_suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.example.demo.test.testtentruycap</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="Signup10">
+                  </a> <!-- Signup10 -->
+                  <span class="method-name">Signup10</span>
+                  <em>
+(Khong nhap ten truy cap)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="Signup13">
+                  </a> <!-- Signup13 -->
+                  <span class="method-name">Signup13</span>
+                  <em>
+(Khong nhap ten truy cap)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="Signup2">
+                  </a> <!-- Signup2 -->
+                  <span class="method-name">Signup2</span>
+                  <em>
+(Khong nhap ten truy cap)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="Signup3">
+                  </a> <!-- Signup3 -->
+                  <span class="method-name">Signup3</span>
+                  <em>
+(Khong nhap ten truy cap)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="Signup4">
+                  </a> <!-- Signup4 -->
+                  <span class="method-name">Signup4</span>
+                  <em>
+(Khong nhap ten truy cap)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="Signup5">
+                  </a> <!-- Signup5 -->
+                  <span class="method-name">Signup5</span>
+                  <em>
+(Khong nhap ten truy cap)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="Signup6">
+                  </a> <!-- Signup6 -->
+                  <span class="method-name">Signup6</span>
+                  <em>
+(Khong nhap ten truy cap)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="Signup7">
+                  </a> <!-- Signup7 -->
+                  <span class="method-name">Signup7</span>
+                  <em>
+(Khong nhap ten truy cap)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="Signup8">
+                  </a> <!-- Signup8 -->
+                  <span class="method-name">Signup8</span>
+                  <em>
+(Khong nhap ten truy cap)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="Signup9">
+                  </a> <!-- Signup9 -->
+                  <span class="method-name">Signup9</span>
+                  <em>
+(Khong nhap ten truy cap)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="dangky1">
+                  </a> <!-- dangky1 -->
+                  <span class="method-name">dangky1</span>
+                  <em>
+(Khong nhap ten truy cap)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="dangky10">
+                  </a> <!-- dangky10 -->
+                  <span class="method-name">dangky10</span>
+                  <em>
+(Khong nhap ten truy cap)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="dangky11">
+                  </a> <!-- dangky11 -->
+                  <span class="method-name">dangky11</span>
+                  <em>
+(Khong nhap ten truy cap)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="dangky2">
+                  </a> <!-- dangky2 -->
+                  <span class="method-name">dangky2</span>
+                  <em>
+(Khong nhap ten truy cap)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="dangky3">
+                  </a> <!-- dangky3 -->
+                  <span class="method-name">dangky3</span>
+                  <em>
+(Khong nhap ten truy cap)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="dangky4">
+                  </a> <!-- dangky4 -->
+                  <span class="method-name">dangky4</span>
+                  <em>
+(Khong nhap ten truy cap)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="dangky5">
+                  </a> <!-- dangky5 -->
+                  <span class="method-name">dangky5</span>
+                  <em>
+(Khong nhap ten truy cap)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="dangky6">
+                  </a> <!-- dangky6 -->
+                  <span class="method-name">dangky6</span>
+                  <em>
+(Khong nhap ten truy cap)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="dangky7">
+                  </a> <!-- dangky7 -->
+                  <span class="method-name">dangky7</span>
+                  <em>
+(Khong nhap ten truy cap)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="dangky8">
+                  </a> <!-- dangky8 -->
+                  <span class="method-name">dangky8</span>
+                  <em>
+(Khong nhap ten truy cap)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="dangky9">
+                  </a> <!-- dangky9 -->
+                  <span class="method-name">dangky9</span>
+                  <em>
+(Khong nhap ten truy cap)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="email1">
+                  </a> <!-- email1 -->
+                  <span class="method-name">email1</span>
+                  <em>
+(Khong nhap ten truy cap)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="email2">
+                  </a> <!-- email2 -->
+                  <span class="method-name">email2</span>
+                  <em>
+(Khong nhap ten truy cap)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="email3">
+                  </a> <!-- email3 -->
+                  <span class="method-name">email3</span>
+                  <em>
+(Khong nhap ten truy cap)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="email4">
+                  </a> <!-- email4 -->
+                  <span class="method-name">email4</span>
+                  <em>
+(Khong nhap ten truy cap)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Default_suite-class-passed -->
+        </div> <!-- panel Default_suite -->
+        <div panel-name="test-xml-Default_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">C:\Users\longn\AppData\Local\Temp\testng-eclipse--1125589931\testng-customsuite.xml</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.example.demo.test.testtentruycap&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Default test --&gt;
+&lt;/suite&gt; &lt;!-- Default suite --&gt;
+            </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="testlist-Default_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Tests for Default suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <ul>
+              <li>
+                <span class="test-name">Default test (1 class)</span>
+              </li>
+            </ul>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="group-Default_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Groups for Default suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="test-group">
+              <span class="test-group-name">tentruycap</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">Signup1</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">Signup10</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">Signup11</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">Signup12</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">Signup13</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">Signup2</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">Signup3</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">Signup4</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">Signup5</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">Signup6</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">Signup7</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">Signup8</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">Signup9</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">dangky1</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">dangky10</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">dangky11</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">dangky2</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">dangky3</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">dangky4</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">dangky5</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">dangky6</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">dangky7</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">dangky8</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">dangky9</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">email1</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">email2</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">email3</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">email4</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="times-Default_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Times for Default suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="times-div">
+              <script type="text/javascript">
+suiteTableInitFunctions.push('tableData_Default_suite');
+function tableData_Default_suite() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Number');
+data.addColumn('string', 'Method');
+data.addColumn('string', 'Class');
+data.addColumn('number', 'Time (ms)');
+data.addRows(28);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'Signup1')
+data.setCell(0, 2, 'com.example.demo.test.testtentruycap')
+data.setCell(0, 3, 5162);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'dangky11')
+data.setCell(1, 2, 'com.example.demo.test.testtentruycap')
+data.setCell(1, 3, 3123);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'dangky10')
+data.setCell(2, 2, 'com.example.demo.test.testtentruycap')
+data.setCell(2, 3, 2964);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'dangky2')
+data.setCell(3, 2, 'com.example.demo.test.testtentruycap')
+data.setCell(3, 3, 2943);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'dangky3')
+data.setCell(4, 2, 'com.example.demo.test.testtentruycap')
+data.setCell(4, 3, 2862);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'dangky5')
+data.setCell(5, 2, 'com.example.demo.test.testtentruycap')
+data.setCell(5, 3, 2810);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'dangky4')
+data.setCell(6, 2, 'com.example.demo.test.testtentruycap')
+data.setCell(6, 3, 2809);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'dangky9')
+data.setCell(7, 2, 'com.example.demo.test.testtentruycap')
+data.setCell(7, 3, 2797);
+data.setCell(8, 0, 8)
+data.setCell(8, 1, 'dangky8')
+data.setCell(8, 2, 'com.example.demo.test.testtentruycap')
+data.setCell(8, 3, 2734);
+data.setCell(9, 0, 9)
+data.setCell(9, 1, 'dangky6')
+data.setCell(9, 2, 'com.example.demo.test.testtentruycap')
+data.setCell(9, 3, 2724);
+data.setCell(10, 0, 10)
+data.setCell(10, 1, 'dangky1')
+data.setCell(10, 2, 'com.example.demo.test.testtentruycap')
+data.setCell(10, 3, 2720);
+data.setCell(11, 0, 11)
+data.setCell(11, 1, 'dangky7')
+data.setCell(11, 2, 'com.example.demo.test.testtentruycap')
+data.setCell(11, 3, 2685);
+data.setCell(12, 0, 12)
+data.setCell(12, 1, 'Signup8')
+data.setCell(12, 2, 'com.example.demo.test.testtentruycap')
+data.setCell(12, 3, 2656);
+data.setCell(13, 0, 13)
+data.setCell(13, 1, 'Signup5')
+data.setCell(13, 2, 'com.example.demo.test.testtentruycap')
+data.setCell(13, 3, 2636);
+data.setCell(14, 0, 14)
+data.setCell(14, 1, 'Signup3')
+data.setCell(14, 2, 'com.example.demo.test.testtentruycap')
+data.setCell(14, 3, 2622);
+data.setCell(15, 0, 15)
+data.setCell(15, 1, 'Signup7')
+data.setCell(15, 2, 'com.example.demo.test.testtentruycap')
+data.setCell(15, 3, 2610);
+data.setCell(16, 0, 16)
+data.setCell(16, 1, 'Signup9')
+data.setCell(16, 2, 'com.example.demo.test.testtentruycap')
+data.setCell(16, 3, 2592);
+data.setCell(17, 0, 17)
+data.setCell(17, 1, 'Signup13')
+data.setCell(17, 2, 'com.example.demo.test.testtentruycap')
+data.setCell(17, 3, 2580);
+data.setCell(18, 0, 18)
+data.setCell(18, 1, 'Signup11')
+data.setCell(18, 2, 'com.example.demo.test.testtentruycap')
+data.setCell(18, 3, 2555);
+data.setCell(19, 0, 19)
+data.setCell(19, 1, 'Signup4')
+data.setCell(19, 2, 'com.example.demo.test.testtentruycap')
+data.setCell(19, 3, 2549);
+data.setCell(20, 0, 20)
+data.setCell(20, 1, 'Signup2')
+data.setCell(20, 2, 'com.example.demo.test.testtentruycap')
+data.setCell(20, 3, 2547);
+data.setCell(21, 0, 21)
+data.setCell(21, 1, 'Signup6')
+data.setCell(21, 2, 'com.example.demo.test.testtentruycap')
+data.setCell(21, 3, 2521);
+data.setCell(22, 0, 22)
+data.setCell(22, 1, 'Signup12')
+data.setCell(22, 2, 'com.example.demo.test.testtentruycap')
+data.setCell(22, 3, 2513);
+data.setCell(23, 0, 23)
+data.setCell(23, 1, 'Signup10')
+data.setCell(23, 2, 'com.example.demo.test.testtentruycap')
+data.setCell(23, 3, 2469);
+data.setCell(24, 0, 24)
+data.setCell(24, 1, 'email3')
+data.setCell(24, 2, 'com.example.demo.test.testtentruycap')
+data.setCell(24, 3, 705);
+data.setCell(25, 0, 25)
+data.setCell(25, 1, 'email2')
+data.setCell(25, 2, 'com.example.demo.test.testtentruycap')
+data.setCell(25, 3, 607);
+data.setCell(26, 0, 26)
+data.setCell(26, 1, 'email1')
+data.setCell(26, 2, 'com.example.demo.test.testtentruycap')
+data.setCell(26, 3, 595);
+data.setCell(27, 0, 27)
+data.setCell(27, 1, 'email4')
+data.setCell(27, 2, 'com.example.demo.test.testtentruycap')
+data.setCell(27, 3, 495);
+window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 1 minutes</span>
+              <div id="times-div-Default_suite">
+              </div> <!-- times-div-Default_suite -->
+            </div> <!-- times-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="reporter-Default_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Reporter output for Default suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="ignored-methods-Default_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">0 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="chronological-Default_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Methods in chronological order</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.example.demo.test.testtentruycap</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">suiteSetup</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">Signup1</span>
+                <span class="method-start">6501 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">dangky1</span>
+                <span class="method-start">11674 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">dangky10</span>
+                <span class="method-start">14397 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">dangky11</span>
+                <span class="method-start">17364 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">dangky2</span>
+                <span class="method-start">20489 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">dangky3</span>
+                <span class="method-start">23434 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">dangky4</span>
+                <span class="method-start">26298 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">dangky5</span>
+                <span class="method-start">29109 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">dangky6</span>
+                <span class="method-start">31922 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">dangky7</span>
+                <span class="method-start">34647 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">dangky8</span>
+                <span class="method-start">37333 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">dangky9</span>
+                <span class="method-start">40069 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">email1</span>
+                <span class="method-start">42867 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">email2</span>
+                <span class="method-start">43465 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">email3</span>
+                <span class="method-start">44074 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">email4</span>
+                <span class="method-start">44781 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">Signup2</span>
+                <span class="method-start">45278 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">Signup3</span>
+                <span class="method-start">47827 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">Signup4</span>
+                <span class="method-start">50451 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">Signup5</span>
+                <span class="method-start">53001 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">Signup6</span>
+                <span class="method-start">55638 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">Signup7</span>
+                <span class="method-start">58161 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">Signup8</span>
+                <span class="method-start">60772 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">Signup9</span>
+                <span class="method-start">63430 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">Signup10</span>
+                <span class="method-start">66024 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">Signup11</span>
+                <span class="method-start">68495 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">Signup12</span>
+                <span class="method-start">71053 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">Signup13</span>
+                <span class="method-start">73569 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-class after">
+                <span class="method-name">suiteTearDown</span>
+                <span class="method-start">76153 ms</span>
+              </div> <!-- configuration-class after -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+      </div> <!-- main-panel-root -->
+    </div> <!-- wrapper -->
+  </body>
+<script type="text/javascript" src="testng-reports2.js"></script>
+</html>
