@@ -3,6 +3,7 @@ package com.vn.demo.configuration;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -52,7 +53,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 		
 		// cho phép hiệu ứng, không chặn các file css,js,bootstrap
 		.antMatchers("/css/**", "/js/**", "/images/**").permitAll()
-		 .antMatchers("/resources/**").permitAll()
+		.antMatchers(HttpMethod.GET, "/css/**", "/js/**","/fonts/**","/**/favicon.ico", "/about").permitAll()
 		.antMatchers("/admin/").hasRole("ADMIN")
 		.antMatchers("/","/Dangky","/category","/New")
 		.permitAll().anyRequest().authenticated()
@@ -71,6 +72,6 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 	public void configure(WebSecurity web) throws Exception {
 	    web
 	            .ignoring()
-	            .antMatchers("/resources/**", "/static/**", "/css/**", "/js/**", "/img/**", "/icon/**");
+	            .antMatchers("/resources/**", "/static/**", "/css/**", "/js/**", "/img/**", "/Pages/**");
 	}
 }
