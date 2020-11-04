@@ -11,6 +11,6 @@ import com.vn.demo.model.Category;
 @Repository
 public interface CategoryRepository extends JpaRepository<Category, Integer> {
 
-	@Query(value = "Select * from Category",nativeQuery = true)
-	public List<Category> fetchAllType();
+//	@Query(value = "Select * from Category",nativeQuery = true)
+//	public List<Category> fetchAllType();
 }

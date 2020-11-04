@@ -8,16 +8,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Pattern;
 
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 
-@Entity // Đánh dấu đây là table trong db
-@Table(name = "ACCOUNT")
-@Data
+@Entity
+@Table(name="ACCOUNT")
 public class Account implements Serializable {
 
 	/**
@@ -27,32 +22,20 @@ public class Account implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="ID")
 	private Integer id;
-
-	@Column(name = "USERNAME")
-	@NotBlank(message = "*Name is mandatory")
-	@Pattern(regexp = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[a-zA-Z\\d]{9,15}$",message = "*Must contain 9 to 15 character and at least 1 letter and 1 \r\n" + 
-			"capitalize letter and 1 number Ex: longnhat12345")
+	
+	@Column(name="USERNAME", unique = true)
 	private String username;
 
-	@Column(name = "PASSWORD")
-	@NotBlank(message = "*Password is mandatory")
-	@Pattern(regexp = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[a-zA-Z\\d]{9,15}$",message = "*Must contain 9 to 15 character and at least 1 letter and 1 \r\n" + 
-			"capitalize letter and 1 number Ex: Longnhat12345")
+	@Column(name="PASSWORD")
 	private String password;
-    
-	@Pattern(regexp = "^[a-z0-9](\\.?[a-z0-9]){5,}@g(oogle)?mail\\.com$",message="*Email must be correct Ex: longnhat.pham112@gmail.com")
-	@NotBlank(message = "*Email is mandatory")
+	
+	@Column(name="EMAIL")
 	private String email;
-
+	
+	@Column(name="ROLE")
 	private String role;
-
-
-
-
-	public Account() {
-		this.role = "USER";
-	}
 
 	public Integer getId() {
 		return id;
@@ -87,13 +70,16 @@ public class Account implements Serializable {
 	}
 
 	public String getRole() {
-	   
 		return role;
 	}
 
 	public void setRole(String role) {
-		role="user";
-		this.role = role;
+		String roles = "user";
+		this.role = roles;
 	}
 
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+	
 }
