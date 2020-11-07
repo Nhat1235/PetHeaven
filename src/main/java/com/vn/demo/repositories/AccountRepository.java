@@ -1,5 +1,7 @@
 package com.vn.demo.repositories;
 
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -15,7 +17,6 @@ public interface AccountRepository extends JpaRepository<Account, Integer> {
 	
 	@Query(value = "SELECT COUNT(Username) AS NumberOfProducts FROM Account", nativeQuery = true)
 	public Account getCustomerInfoById(String code);
-	
 	
 
 }

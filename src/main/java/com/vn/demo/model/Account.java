@@ -12,7 +12,7 @@ import javax.persistence.Table;
 import lombok.Data;
 
 @Entity
-@Table(name="ACCOUNT")
+@Table(name = "ACCOUNT")
 public class Account implements Serializable {
 
 	/**
@@ -22,19 +22,19 @@ public class Account implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="ID")
+	@Column(name = "ID")
 	private Integer id;
-	
-	@Column(name="USERNAME", unique = true)
+
+	@Column(name = "USERNAME", unique = true)
 	private String username;
 
-	@Column(name="PASSWORD")
+	@Column(name = "PASSWORD")
 	private String password;
-	
-	@Column(name="EMAIL")
+
+	@Column(name = "EMAIL")
 	private String email;
-	
-	@Column(name="ROLE")
+
+	@Column(name = "ROLE")
 	private String role;
 
 	public Integer getId() {
@@ -74,12 +74,11 @@ public class Account implements Serializable {
 	}
 
 	public void setRole(String role) {
-		String roles = "user";
-		this.role = roles;
+		this.role = role;
 	}
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-	
+
 }
