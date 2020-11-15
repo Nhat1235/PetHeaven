@@ -43,7 +43,7 @@ public class AccountController {
 		    BCryptPasswordEncoder encoder=new BCryptPasswordEncoder();
 		    
 			account.setPassword(encoder.encode(password));
-			
+			account.setRole("ROLE_USER");
 			accountRepository.save(account);
 			
 			

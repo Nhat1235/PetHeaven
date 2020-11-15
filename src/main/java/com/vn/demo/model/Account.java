@@ -9,7 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import lombok.Data;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @Entity
 @Table(name = "ACCOUNT")
@@ -37,6 +37,7 @@ public class Account implements Serializable {
 	@Column(name = "ROLE")
 	private String role;
 
+	
 	public Integer getId() {
 		return id;
 	}
@@ -58,7 +59,8 @@ public class Account implements Serializable {
 	}
 
 	public void setPassword(String password) {
-		this.password = password;
+		BCryptPasswordEncoder encoder=new BCryptPasswordEncoder();
+		this.password = encoder.encode(password);
 	}
 
 	public String getEmail() {

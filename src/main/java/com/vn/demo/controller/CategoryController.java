@@ -13,13 +13,13 @@ import com.vn.demo.repositories.CategoryRepository;
 @Controller
 public class CategoryController {
 
-	@Autowired
-	CategoryRepository category;
-
-	@RequestMapping("Category")
-	public String a(ModelMap model) {
-		List<Category> list = category.findAll();
-		model.addAttribute("category", list);
-		return "Category";
-	}
+//	@Autowired
+//	CategoryRepository category;
+//
+//	@RequestMapping("Category")
+//	public String a(ModelMap model) {
+//		List<Category1> list = category.findAll();
+//		model.addAttribute("category", list);
+//		return "Category";
+//	}
 }

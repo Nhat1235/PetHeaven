@@ -1,12 +1,8 @@
 package com.vn.demo.configuration;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.security.servlet.PathRequest;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.HttpMethod;
-import org.springframework.security.authentication.AuthenticationProvider;
-import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
@@ -14,7 +10,6 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
@@ -52,14 +47,12 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests().antMatchers("/admin/assets/datatable/datatables.css").permitAll().and().csrf().disable();
 		
-		// cho phép hiệu ứng, không chặn các file css,js,bootstrap
-//		.antMatchers("/templates/**", "/static/**").permitAll()
-		
 	      http
 	        .authorizeRequests()
-	            .antMatchers("/templates/**", "/static/**").permitAll()
+	            .antMatchers("/resources/**", "/templates/**", "/static/**").permitAll()
 	            .antMatchers("/admin/").hasRole("ADMIN")
-		        .antMatchers("/","/Dangky","/category","/New").permitAll()
+	    		// cho phép hiệu ứng, không chặn các file css,js,bootstrap
+		        .antMatchers("/","/login","/Dangky","/resources/**", "/templates/**", "/static/**","/images/**","/webfonts/**").permitAll()
 		        .anyRequest().fullyAuthenticated()
 				.and()
 			.formLogin()
@@ -76,9 +69,10 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 	}
 	@Override
 	public void configure(WebSecurity web) throws Exception {
-	     web.ignoring().antMatchers("webjars/**,/assets/**,/bootstrap/**,/datatable/**,http://localhost:8088/admin/assets/datatable/datatables.css");
+	    web
+	            .ignoring()
+	            .antMatchers("/resources/**", "/static/**", "/css/**", "/js/**", "/images/**", "/icon/**");
 	}
-	
 	
 	
 	
