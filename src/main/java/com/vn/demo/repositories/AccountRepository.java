@@ -9,7 +9,7 @@ import com.vn.demo.model.Account;
 @Repository
 public interface AccountRepository extends JpaRepository<Account, Integer> {
 	
-	public Account findByUsername(String username);
+	public Account findAccountByUsername(String username);
 
 	public Account findByRole(String role);
 	

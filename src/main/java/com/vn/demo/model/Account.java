@@ -9,8 +9,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-
 @Entity
 @Table(name = "ACCOUNT")
 public class Account implements Serializable {
@@ -59,8 +57,7 @@ public class Account implements Serializable {
 	}
 
 	public void setPassword(String password) {
-		BCryptPasswordEncoder encoder=new BCryptPasswordEncoder();
-		this.password = encoder.encode(password);
+		this.password = password;
 	}
 
 	public String getEmail() {

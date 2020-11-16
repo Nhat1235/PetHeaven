@@ -10,11 +10,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import lombok.Data;
-
 @Entity
 @Table(name = "Product")
-@Data
+
 public class Product {
 	
 	@Id
@@ -22,27 +20,91 @@ public class Product {
 	@Column(name="ProductID")
 	private Integer id;
 	
-	@Column(name = "Name")
-	private String productName;
+	@Column(name = "NAME")
+	private String name;
 	
-	@Column(name = "Detail")
+	@Column(name = "DETAIL")
 	private String detail;
 	
-	@Column(name="Price")
+	@Column(name="PRICE")
 	private String price;
 	
-	@Column(name="Image")
+	@Column(name="IMAGE")
 	private String image;
 	
-	@Column(name="Date")
+	@Column(name="DATE")
 	private Date createDate;
 	
-	@Column(name="Status")
-	private boolean Status;
+	@Column(name="STATUS")
+	private boolean status;
 	
 	@ManyToOne
-	@JoinColumn(name="idCategory")
-	private Category CategoryId;
+	@JoinColumn(name="IDCATEGORY")
+	private Category categoryId;
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getDetail() {
+		return detail;
+	}
+
+	public void setDetail(String detail) {
+		this.detail = detail;
+	}
+
+	public String getPrice() {
+		return price;
+	}
+
+	public void setPrice(String price) {
+		this.price = price;
+	}
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
+	}
+
+	public Date getCreateDate() {
+		return createDate;
+	}
+
+	public void setCreateDate(Date createDate) {
+		this.createDate = createDate;
+	}
+
+	public boolean isStatus() {
+		return status;
+	}
+
+	public void setStatus(boolean status) {
+		this.status = status;
+	}
+
+	public Category getCategoryId() {
+		return categoryId;
+	}
+
+	public void setCategoryId(Category categoryId) {
+		this.categoryId = categoryId;
+	}
 
 	
 	

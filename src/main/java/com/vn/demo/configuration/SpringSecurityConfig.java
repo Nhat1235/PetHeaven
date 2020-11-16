@@ -16,64 +16,60 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 @Configuration
 @EnableWebSecurity
 public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
-    
+
 	@Autowired
 	private UserDetailsService userDetailsService;
 
-//	@Bean
-//	public AuthenticationProvider authprovider() {
-//		DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
-//		provider.setUserDetailsService(userDetailsService);
-////		provider.setPasswordEncoder(new BCryptPasswordEncoder());
-//		provider.setPasswordEncoder(NoOpPasswordEncoder.getInstance());
-//		
-//		return provider;
-//	}
-	
-	 @Bean
-	    public PasswordEncoder passwordEncoder() {
-	        return new BCryptPasswordEncoder();
-    }
-	 
-	    @Autowired
-	    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-	    	
-	        auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
-	        
-	    }
-	    
+	/*
+	 * @Bean public AuthenticationProvider authprovider() {
+	 * DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
+	 * provider.setUserDetailsService(userDetailsService);
+	 * provider.setPasswordEncoder(new BCryptPasswordEncoder());
+	 * provider.setPasswordEncoder(NoOpPasswordEncoder.getInstance());
+	 * 
+	 * return provider; }
+	 */
+
+	@Bean
+	public PasswordEncoder passwordEncoder() {
+		return new BCryptPasswordEncoder();
+	}
+
+	@Autowired
+	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+
+		auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
+
+	}
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.authorizeRequests().antMatchers("/admin/assets/datatable/datatables.css").permitAll().and().csrf().disable();
 		
-	      http
-	        .authorizeRequests()
-	            .antMatchers("/resources/**", "/templates/**", "/static/**").permitAll()
-	            .antMatchers("/admin/").hasRole("ADMIN")
-	    		// cho phép hiệu ứng, không chặn các file css,js,bootstrap
-		        .antMatchers("/","/login","/Dangky","/resources/**", "/templates/**", "/static/**","/images/**","/webfonts/**").permitAll()
-		        .anyRequest().fullyAuthenticated()
+	    http.authorizeRequests().antMatchers("/admin/assets/datatable/datatables.css").permitAll().and().csrf().disable();
+		 
+
+		http.authorizeRequests()
+				/* .antMatchers("/admin/").hasRole("ADMIN") */
+				// cho phép hiệu ứng, không chặn các file css,js,bootstrap
+				.antMatchers("/","/Dangky","/resources/**", "/templates/**", "/static/**", "/css/**", "/js/**", "/images/**", "/webfonts/**").permitAll()
+				.anyRequest()
+				.fullyAuthenticated()
 				.and()
-			.formLogin()
-				.loginPage("/login").permitAll()
-				.defaultSuccessUrl("/")
+				.formLogin().loginPage("/login").permitAll()
+				.defaultSuccessUrl("/", true)
 				.and()
-			.logout()
-			    .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-                .logoutSuccessUrl("/login")
+				.logout()
+				.logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+				.logoutSuccessUrl("/login")
 				.permitAll()
 				.and()
 				.csrf()
-				.disable();;
-	}
-	@Override
-	public void configure(WebSecurity web) throws Exception {
-	    web
-	            .ignoring()
-	            .antMatchers("/resources/**", "/static/**", "/css/**", "/js/**", "/images/**", "/icon/**");
+				.disable();
+		;
 	}
 	
-	
-	
+	  @Override public void configure(WebSecurity web) throws Exception { 
+		  web.ignoring() .antMatchers("/resources/**", "/static/**", "/css/**", "/js/**","/images/**", "/icon/**"); }
+	 
+
 }

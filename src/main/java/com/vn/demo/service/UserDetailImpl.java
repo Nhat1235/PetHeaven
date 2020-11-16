@@ -15,7 +15,6 @@ public class UserDetailImpl implements UserDetails {
 	private Account user;
 	
 	public UserDetailImpl(Account user) {
-		super();
 		this.user = user;
 	}
 

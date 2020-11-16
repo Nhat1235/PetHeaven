@@ -4,6 +4,7 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
@@ -22,6 +23,9 @@ public class AccountController {
 	@Autowired
 	AccountRepository accountRepository;
 
+	@Autowired
+	PasswordEncoder passwordEncoder;
+	
 	@GetMapping("/login")
 	public String login(ModelMap model) {
 		return "login1";
@@ -40,10 +44,11 @@ public class AccountController {
 		}
 		try {
 			
-		    BCryptPasswordEncoder encoder=new BCryptPasswordEncoder();
-		    
-			account.setPassword(encoder.encode(password));
+			BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+			String encryptPassword = encoder.encode(password.trim());
+			account.setPassword(encryptPassword);
 			account.setRole("ROLE_USER");
+			
 			accountRepository.save(account);
 			
 			
