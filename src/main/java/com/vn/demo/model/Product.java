@@ -67,7 +67,9 @@ public class Product {
 	}
 
 	public String getPrice() {
-		return price;
+		String parts[] = price.split("\\.");
+		String part1 = parts[0];
+		return part1;
 	}
 
 	public void setPrice(String price) {

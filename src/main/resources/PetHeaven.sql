@@ -25,8 +25,8 @@ PHONE varchar(20) null,
 
 create table Category(
 CategoryID int identity(1,1) primary key,
-CategoryParent nvarchar(200) not null,
-CategoryChild nvarchar(200) null,
+parentname nvarchar(200) not null,
+categoryname nvarchar(200) not null,
 )
 
 create table Product(
@@ -63,16 +63,29 @@ QUANTITY int null,
 
 insert into Customer values (null,N'Số nhà 41,ngõ Trại Găng, phường Thanh Nhàn, quận Hai Bà Trưng, Hà Nội','0926881894')
 
-insert into Category values (N'Chó',N'Chó cảnh')
-insert into Category values (N'Mèo',N'Mèo cảnh')
-insert into Category values (N'Chim',N'Chim cảnh')
-insert into Category values (N'Cá',N'Cá cảnh')
-insert into Category values (N'Phụ kiện',N'Nhà')
-insert into Category values (N'Phụ kiện',N'Chuồng')
-insert into Category values (N'Phụ kiện',N'Bát')
-insert into Category values (N'Phụ kiện',N'Thức ăn')
+insert into Category values (N'Phụ kiện',N'Chuồng,nhà cho chó')
+insert into Category values (N'Phụ kiện',N'Chuồng,nhà cho mèo')
+insert into Category values (N'Phụ kiện',N'Bát ăn')
+insert into Category values (N'Thức ăn',N'Thức ăn mèo')
+insert into Category values (N'Thức ăn',N'Thức ăn chó')
+insert into Category values (N'Phụ kiện',N'Dây')
+insert into Category values (N'Phụ kiện',N'Balo, túi đựng thú')
+insert into Category values (N'Phụ kiện',N'Hộp vệ sinh')
 
-insert into Product values (N'Chó shiba',N'Màu: Vàng',10000.0,'https://azpet.com.vn/wp-content/uploads/2019/10/cho-inu-shiba.jpg','11-02-2020',1,1)
+
+insert into Product values (N'Petstar - Balo di chuyển phi hành gia (nhựa trong)',N'Màu: Vàng',399000.0,'https://www.petcity.vn/media/product/3757_balo_trong_vang.jpg','11-11-2020',1,7)
+insert into Product values (N'Nhà lều Angry birds',N'Màu: Đỏ',345000.0,'https://www.petcity.vn/media/product/386_1_386_dem_angry_birds.jpg','11-11-2020',1,1)
+insert into Product values (N'Túi xách vận chuyển thú cưng vòm lưới nhỏ',N'Khối lượng: 400g, 1Kg',155000.0,'https://www.petcity.vn/media/product/2402_tui_van_chuyen_luoi_thoang_khi_cho_cho_meo_3_2ea8963b_a1bc_4393_967a_4b771586e620.jpg','11-11-2020',1,7)
+insert into Product values (N'Hạt MeO cho mèo các loại',N'Màu: Xanh',29000.0,'https://product.hstatic.net/1000104513/product/05279fd197c24be8a92a21eb66617c50_846a7826db48449d8beb78e7fb7a99b6.jpg','11-11-2020',1,4)
+insert into Product values (N'Khay vệ sinh cho mèo IRIS NE-550',N'Thương hiệu: OEM',240000.0,'https://product.hstatic.net/1000104513/product/beaf5a2b51cb44339b2b1bfc94401722_43fd4d1f745041d4b3bd14e54dace156.jpg','11-11-2020',1,8)
+insert into Product values (N'Hạt Nutri Source PureVita cho mèo 3kg',N'Thương hiệu: Nutri Source, Vị: Cá, gà',442000.0,'https://product.hstatic.net/1000104513/product/u26znq_simg_de2fe0_500x500_maxb_eb5634d8858140bfb3d0f78018e1c233.png','11-11-2020',1,4)
+insert into Product values (N'Hạt Pedigree chó con vị gà, trứng và sữa',N'Thương hiệu: Pedigree, Khối lượng: 400g',45000.0,'https://product.hstatic.net/1000104513/product/37300d52605046d9a406ad7c0246085a_5411482ec59d49449247f5fe35717301.jpeg','11-11-2020',1,5)
+insert into Product values (N'Hạt ANF 6 Free Dog cho chó 2kg',N'Vị: Cá hồi, cừu, vịt',440000.0,'https://product.hstatic.net/1000104513/product/b5986a1e156845be968b13e6c4b7dc83_aaf42d79b09c46a584ecdc544c400eaf.jpg','11-11-2020',1,5)
+insert into Product values (N'Hạt Ganador Premium cho chó 400g',N'Thương hiệu: ADM',28000.0,'https://product.hstatic.net/1000104513/product/packagin-515-341-08-199x300_2a00c148aacf4434a5a0856784477185.png','11-11-2020',1,5)
+insert into Product values (N'Ferplast Maxi Bella Cabrio - Nhà vệ sinh cho mèo lớn và chó nhỏ',N'Thương hiệu: Ferplast',1900000.0,'https://product.hstatic.net/1000104513/product/8b1fa2b18c3811e4872360d819ddcce3-bc04a3e0841411e780cc704d7b6583c9_3e88fa48b7444f21990fd07b2ffb7aac.jpg','11-11-2020',1,8)
+insert into Product values (N'Xẻng dọn phân mèo',N'Thương hiệu: OEM',27000.0,'https://product.hstatic.net/1000104513/product/49e09c85ef2c9a636d90dca9ac751aa3_44a09d66d9874996abf609bb8b231cf9.jpg','11-11-2020',1,9)
+insert into Product values (N'Lưới vỉ ghép chuồng kim loại và nút ghép cao su',N'Thương hiệu: OEM',20000.0,'https://product.hstatic.net/1000104513/product/43205b23649a4d52a950c882abbaf255_0d446ce0625f40a1bb6107898b18db15.jpg','11-11-2020',1,1)
+
 
 
 select * from ACCOUNT
@@ -83,3 +96,5 @@ select * from Product
 update account set role = 'ROLE_ADMIN'
 
 SELECT COUNT(Username) AS NumberOfUsername FROM Account where USERNAME like 'nhat1231'
+
+select distinct * from category where parentname like N'Thức ăn'

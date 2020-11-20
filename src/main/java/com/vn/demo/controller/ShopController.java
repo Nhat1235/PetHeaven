@@ -3,26 +3,64 @@ package com.vn.demo.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.vn.demo.model.Category;
 import com.vn.demo.model.Product;
+import com.vn.demo.repositories.ProductRepository;
+import com.vn.demo.service.CategoryService;
 import com.vn.demo.service.ProductService;
 
 @Controller
-@RequestMapping("/shop")
+/* @RequestMapping("shop") */
 public class ShopController {
- 
+
 	@Autowired
 	ProductService service;
-	
-	@RequestMapping("")
+
+	@Autowired
+	ProductRepository rep;
+
+	@Autowired
+	CategoryService CategoryService;
+
+	@RequestMapping("shop")
 	public String shop(Model model) {
-		List<Product> list = service.getProductList();
+		Page<Product> list = rep.findAll(PageRequest.of(0, 9));
+		model.addAttribute("ProductList", list);
+		model.addAttribute("totalProduct1page", list.getSize());
+		model.addAttribute("totalProduct", list.getTotalElements());
+		model.addAttribute("page", list.getTotalPages());
+		/* List<Category> catelist = CategoryService.getFoodName(); */
+		model.addAttribute("animalfood", CategoryService.getFoodName());
+		model.addAttribute("accessories", CategoryService.getAccessoriesName());
+		return "shop.html";
+	}
+
+	@RequestMapping(value = "/page/{Pnum}", method = RequestMethod.GET)
+	public String page(Model model, @PathVariable Integer pnum) {
+		Page<Product> list = rep.findAll(PageRequest.of(pnum, 9));
 		model.addAttribute("ProductList", list);
 		return "shop.html";
 	}
+
 	
-	
+    @RequestMapping(value="{id}", method = RequestMethod.GET) 
+    public String findByCategory(@PathVariable("id")Category id,Model model) { 
+		
+		 List<Product> list = rep.findByCategoryId(id);
+		 
+		model.addAttribute("ProductList", list); 
+		model.addAttribute("animalfood", CategoryService.getFoodName());
+		model.addAttribute("accessories", CategoryService.getAccessoriesName());
+		
+    	return "shop.html"; 
+    }
+	 
 }

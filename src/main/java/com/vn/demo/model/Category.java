@@ -16,11 +16,20 @@ public class Category {
 	@Column(name = "CategoryID")
     private Integer id;
 	
-	@Column(name="Parent")
-	private String cparent;
+	@Column(name = "parentname")
+	private String parentname;
 	
-	@Column(name="Child")
-	private String cchild;
+	@Column(name="categoryname")
+	private String categoryname;
+	
+
+	public String getParentname() {
+		return parentname;
+	}
+
+	public void setParentname(String parentname) {
+		this.parentname = parentname;
+	}
 
 	public Integer getId() {
 		return id;
@@ -30,21 +39,15 @@ public class Category {
 		this.id = id;
 	}
 
-	public String getCparent() {
-		return cparent;
+	public String getCategoryname() {
+		return categoryname;
 	}
 
-	public void setCparent(String cparent) {
-		this.cparent = cparent;
+	public void setCategoryname(String categoryname) {
+		this.categoryname = categoryname;
 	}
 
-	public String getCchild() {
-		return cchild;
-	}
 
-	public void setCchild(String cchild) {
-		this.cchild = cchild;
-	}
 	
 	
 }

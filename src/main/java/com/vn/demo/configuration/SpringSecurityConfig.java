@@ -44,32 +44,28 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		
-	    http.authorizeRequests().antMatchers("/admin/assets/datatable/datatables.css").permitAll().and().csrf().disable();
-		 
+
+		http.authorizeRequests().antMatchers("/admin/assets/datatable/datatables.css").permitAll().and().csrf()
+				.disable();
 
 		http.authorizeRequests()
-				/* .antMatchers("/admin/").hasRole("ADMIN") */
+				 .antMatchers("/admin/").hasRole("ADMIN") 
 				// cho phép hiệu ứng, không chặn các file css,js,bootstrap
-				.antMatchers("/","/Dangky","/resources/**", "/templates/**", "/static/**", "/css/**", "/js/**", "/images/**", "/webfonts/**").permitAll()
-				.anyRequest()
-				.fullyAuthenticated()
-				.and()
-				.formLogin().loginPage("/login").permitAll()
-				.defaultSuccessUrl("/", true)
-				.and()
-				.logout()
-				.logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-				.logoutSuccessUrl("/login")
-				.permitAll()
-				.and()
-				.csrf()
-				.disable();
+				.antMatchers("/", "/Dangky","shop").permitAll()
+				/*
+				 * .antMatchers("/resources/**", "/templates/**", "/static/**", "/css/**",
+				 * "/js/**", "/images/**", "/webfonts/**")
+				 */
+				.anyRequest().fullyAuthenticated().and().formLogin().loginPage("/login").permitAll()
+				.defaultSuccessUrl("/", true).and().logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+				.logoutSuccessUrl("/login").permitAll().and().csrf().disable();
 		;
 	}
-	
-	  @Override public void configure(WebSecurity web) throws Exception { 
-		  web.ignoring() .antMatchers("/resources/**", "/static/**", "/css/**", "/js/**","/images/**", "/icon/**"); }
-	 
 
+
+	  @Override
+	    public void configure(WebSecurity web) throws Exception {
+	       web.ignoring().antMatchers("/css/**","/js/**","/images/**","/webfonts/**","/icon/**").anyRequest();
+	    }
+	
 }

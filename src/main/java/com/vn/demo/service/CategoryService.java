@@ -30,4 +30,10 @@ public class CategoryService {
 		categoryrepository.save(category);
 		
 	}
+	public List<Category> getFoodName() {
+		return categoryrepository.getFoodInCategory();
+	}
+	public List<Category> getAccessoriesName() {
+		return categoryrepository.getAccessoriesInCategory();
+	}
 }
