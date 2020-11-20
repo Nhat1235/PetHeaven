@@ -8,10 +8,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.Table;
 
 @Entity
-@Table(name = "Product")
 
 public class Product {
 	
@@ -32,6 +30,12 @@ public class Product {
 	@Column(name="IMAGE")
 	private String image;
 	
+	@Column(name = "IMAGE1")
+	private String DetailImg1;
+	
+	@Column(name = "IMAGE2")
+	private String DetailImg2;
+	
 	@Column(name="DATE")
 	private Date createDate;
 	
@@ -41,6 +45,22 @@ public class Product {
 	@ManyToOne
 	@JoinColumn(name="IDCATEGORY")
 	private Category categoryId;
+
+	public String getImage1() {
+		return DetailImg1;
+	}
+
+	public void setImage1(String image1) {
+		this.DetailImg1 = image1;
+	}
+
+	public String getImage2() {
+		return DetailImg2;
+	}
+
+	public void setImage2(String image2) {
+		this.DetailImg2 = image2;
+	}
 
 	public Integer getId() {
 		return id;
@@ -67,9 +87,7 @@ public class Product {
 	}
 
 	public String getPrice() {
-		String parts[] = price.split("\\.");
-		String part1 = parts[0];
-		return part1;
+	return price;
 	}
 
 	public void setPrice(String price) {
