@@ -9,6 +9,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 @Entity
 
 public class Product {
@@ -31,11 +33,12 @@ public class Product {
 	private String image;
 	
 	@Column(name = "IMAGE1")
-	private String DetailImg1;
+	private String image1;
 	
 	@Column(name = "IMAGE2")
-	private String DetailImg2;
+	private String image2;
 	
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	@Column(name="DATE")
 	private Date createDate;
 	
@@ -46,20 +49,22 @@ public class Product {
 	@JoinColumn(name="IDCATEGORY")
 	private Category categoryId;
 
+	
+
 	public String getImage1() {
-		return DetailImg1;
+		return image1;
 	}
 
 	public void setImage1(String image1) {
-		this.DetailImg1 = image1;
+		this.image1 = image1;
 	}
 
 	public String getImage2() {
-		return DetailImg2;
+		return image2;
 	}
 
 	public void setImage2(String image2) {
-		this.DetailImg2 = image2;
+		this.image2 = image2;
 	}
 
 	public Integer getId() {

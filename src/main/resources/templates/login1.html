@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -329,23 +329,16 @@ body{
 	<!--<div class="alert alert-danger" th:if="${param.username<7}">Invalid
 		username </div>-->
 
-	<form th:action="@{/login}" method="post" class="form-signin"  >
+	<form th:action="@{login}" class="form-signin" method="post" >
 		<div id="logreg-forms" class="rounded">
 
 			<h1 class="h3 mb-3 font-weight-bold" style="text-align: center" >Welcome!</h1>
 			<div class="social-login">
-				<!--<button class="btn facebook-btn social-btn" type="button">
-					<span><i class="fab fa-facebook-f"></i> Sign in with
-						Facebook</span>
-				</button>
-				<button class="btn google-btn social-btn" type="button">
-					<span><i class="fab fa-google-plus-g"></i> Sign in with
-						Google+</span>-->
-				</button></div>
+				</div>
 					<div class="alert alert-danger" th:if="${param.error}">*Forgot your username and password?<a th:href="@{/Dangky}"> Click here!</a> </div>
 			
 			<input type="text" class="form-control" name="username"
-				placeholder="Username" required="required" autofocus=""> 
+				placeholder="Username" required="required"> 
 				<input
 				type="password" class="form-control" name="password"
 				placeholder="Password" required="required">

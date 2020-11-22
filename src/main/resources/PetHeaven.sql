@@ -109,7 +109,7 @@ select * from Customer
 select * from Category
 select * from Product
 
---update account set role = 'ROLE_ADMIN'
+update account set role = 'ROLE_ADMIN'
 
 SELECT COUNT(Username) AS NumberOfUsername FROM Account where USERNAME like 'nhat1231'
 

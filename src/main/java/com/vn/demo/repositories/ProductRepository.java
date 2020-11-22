@@ -2,16 +2,12 @@ package com.vn.demo.repositories;
 
 import java.util.List;
 
-import org.springframework.boot.autoconfigure.data.web.SpringDataWebProperties.Pageable;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
 
 import com.vn.demo.model.Category;
 import com.vn.demo.model.Product;
-
+@Repository
 public interface ProductRepository extends JpaRepository<Product, Integer> {
 
 	
@@ -24,6 +20,9 @@ public interface ProductRepository extends JpaRepository<Product, Integer> {
 	
 	
 	public List<Product> findByCategoryId(Category categoryId);
+
+	
+	public List<Product> findProductById(Integer id);
 
 //	@Query(countQuery = "select top(*) from product where categoryId := id",nativeQuery = true)
 //	 public Page<Product> findByCategoryById(Category id, Pageable pageable); 
