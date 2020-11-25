@@ -3,6 +3,8 @@ package com.vn.demo.repositories;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import com.vn.demo.model.Category;
@@ -26,7 +28,7 @@ public interface ProductRepository extends JpaRepository<Product, Integer> {
 
 //	@Query(countQuery = "select top(*) from product where categoryId := id",nativeQuery = true)
 //	 public Page<Product> findByCategoryById(Category id, Pageable pageable); 
-	 
-	 
+	 @Query(value = "select categoryname from Category where CategoryID =:categoryID",nativeQuery = true)
+	 public List<Category> getCategoryName(@Param("categoryID")int categoryID);
 	 
 }

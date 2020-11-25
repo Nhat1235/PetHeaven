@@ -36,4 +36,7 @@ public class CategoryService {
 	public List<Category> getAccessoriesName() {
 		return categoryrepository.getAccessoriesInCategory();
 	}
+	public List<Integer> getCategoryID() {
+		return categoryrepository.getCategoryId();
+	}
 }

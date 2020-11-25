@@ -5,18 +5,22 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
-@Entity
 
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "Product")
 public class Product {
-	
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="ProductID")
 	private Integer id;
 	
@@ -38,7 +42,7 @@ public class Product {
 	@Column(name = "IMAGE2")
 	private String image2;
 	
-	@DateTimeFormat(pattern = "dd/MM/yyyy")
+	
 	@Column(name="DATE")
 	private Date createDate;
 	
@@ -129,6 +133,13 @@ public class Product {
 
 	public void setCategoryId(Category categoryId) {
 		this.categoryId = categoryId;
+	}
+
+	@Override
+	public String toString() {
+		return "Product [id=" + id + ", name=" + name + ", detail=" + detail + ", price=" + price + ", image=" + image
+				+ ", image1=" + image1 + ", image2=" + image2 + ", createDate=" + createDate + ", status=" + status
+				+ ", categoryId=" + categoryId + "]";
 	}
 
 	

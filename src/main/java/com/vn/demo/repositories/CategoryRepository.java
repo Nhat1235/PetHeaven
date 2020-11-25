@@ -20,5 +20,6 @@ public interface CategoryRepository extends JpaRepository<Category, Integer> {
 	@Query(value = "select distinct * from category where parentname like N'Phụ kiện'",nativeQuery = true)
 	public List<Category> getAccessoriesInCategory();
 	
-	
+	@Query(value = "select distinct CategoryID from Category",nativeQuery = true)
+	public List<Integer> getCategoryId();
 }

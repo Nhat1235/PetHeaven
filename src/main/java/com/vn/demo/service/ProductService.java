@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.vn.demo.model.Category;
 import com.vn.demo.model.Product;
 import com.vn.demo.repositories.ProductRepository;
 
@@ -32,6 +33,8 @@ public class ProductService {
 
 	public void save(Product product) {
 		productRepository.save(product);
-		
+	}
+	public List<Category> getCategoryName(int categoryID) {
+		return productRepository.getCategoryName(categoryID);
 	}
 }
