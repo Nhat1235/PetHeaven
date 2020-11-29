@@ -3,7 +3,6 @@ package com.vn.demo.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.data.web.SpringDataWebProperties.Pageable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Controller;
@@ -33,10 +32,11 @@ public class ShopController {
 
 	@RequestMapping("")
 	public String shop(Model model) {
-		Page<Product> list = rep.findAll(PageRequest.of(0, 13));
+//		PageWrapper<Product> list = new PageWrapper<Product>(rep.findAll(PageRequest.of(0, 13)),"");
+		Page<Product> list =  rep.findAll(PageRequest.of(0, 15));
 		model.addAttribute("ProductList", list);
 		model.addAttribute("totalProduct1page", list.getSize());
-		model.addAttribute("totalProduct", list.getTotalElements());
+//		model.addAttribute("totalProduct", list.getTotalElements());
 		model.addAttribute("page", list.getTotalPages());
 		/* List<Category> catelist = CategoryService.getFoodName(); */
 		model.addAttribute("animalfood", CategoryService.getFoodName());
@@ -54,15 +54,18 @@ public class ShopController {
 	@RequestMapping(value = "{id}", method = RequestMethod.GET)
 	public String findByCategory(@PathVariable("id") Category id, Model model) {
 
-		/*
-		 * Pageable pageable; List<Product> list = rep.findByCategoryId(id,pageable);
-		 */
-	 List<Product> list = rep.findByCategoryId(id); 
-		/*
-		 * model.addAttribute("totalProduct1page", list.getSize());
-		 * model.addAttribute("totalProduct", list.getTotalElements());
-		 * model.addAttribute("page", list.getTotalPages());
-		 */
+//		  Page<Product> list = rep.getProductbyCategoryId(id,PageRequest.of(0, 13));
+		 
+		List<Product> list = rep.findByCategoryId(id);
+		
+//		PageWrapper<Product> list = new PageWrapper<Product>(rep.getProductbyCategoryId(id,PageRequest.of(0, 13)), "{id}");
+		
+//		  model.addAttribute("totalProduct1page", list.getSize());
+		  
+//		  model.addAttribute("totalProduct", list.getTotalElements());
+		  
+//		  model.addAttribute("page", list.getTotalPages());
+		  
 		model.addAttribute("ProductList", list);
 		model.addAttribute("animalfood", CategoryService.getFoodName());
 		model.addAttribute("accessories", CategoryService.getAccessoriesName());

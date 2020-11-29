@@ -51,14 +51,14 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 		http.authorizeRequests()
 				 .antMatchers("/admin/").hasRole("ADMIN") 
 				// cho phép hiệu ứng, không chặn các file css,js,bootstrap
-				.antMatchers("/", "/Dangky","/shop").permitAll()
+				.antMatchers("/", "/Dangky","/shop","/shop-detail/**","/cart").permitAll()
 				
 //				  .antMatchers("/resources/**", "/templates/**", "/static/**", "/css/**","/js/**", "/images/**", "/webfonts/**").permitAll()
 				 
 				.anyRequest().fullyAuthenticated().and().formLogin().loginPage("/login").permitAll()
 				.defaultSuccessUrl("/", true).and().logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
 				.logoutSuccessUrl("/login").permitAll().and().csrf().disable();
-		;
+		
 	}
 
 

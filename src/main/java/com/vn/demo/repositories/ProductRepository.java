@@ -2,6 +2,9 @@ package com.vn.demo.repositories;
 
 import java.util.List;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -26,9 +29,17 @@ public interface ProductRepository extends JpaRepository<Product, Integer> {
 	
 	public List<Product> findProductById(Integer id);
 
-//	@Query(countQuery = "select top(*) from product where categoryId := id",nativeQuery = true)
-//	 public Page<Product> findByCategoryById(Category id, Pageable pageable); 
+	/*
+	 * @Query(countQuery =
+	 * "select top(*) from product where categoryId := id",nativeQuery = true)
+	 * public Page<Product> findByCategoryById(Category id, Pageable pageable);
+	 */
+	
+	
 	 @Query(value = "select categoryname from Category where CategoryID =:categoryID",nativeQuery = true)
 	 public List<Category> getCategoryName(@Param("categoryID")int categoryID);
+
+	 @Query(value = "select * from product where categoryid =:id",nativeQuery = true)
+	 public List<Product> getProductbyCategoryId(Category id);
 	 
 }

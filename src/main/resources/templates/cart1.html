@@ -1,0 +1,41 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head></head>
+<body>
+<h2>Tong tien: <span th:text="${session.gioHang.total}"></span></h2>
+<table border="1">
+    <thead>
+       <tr>
+           <td>#</td>
+           <td>name</td>
+           <td>price</td>
+           <td>quantity</td>
+           <td>subtotal</td>
+           <td>remove</td>
+       </tr>
+    </thead>
+     <tbody>
+       <tr th:each="item: ${session.gioHang.items}">
+         <td th:text="${item.product.id}"></td>
+         <td th:text="${item.product.name}"></td>
+         <td th:text="${item.product.price}"></td>
+         <td>
+            <form th:action="@{/cart/update}" method="post">
+              <input type="hidden" name="id" th:value="${item.product.id}"/>
+              <input type="number" min="1" th:value="${item.quantity}" name="quan"/>
+              <button type="submit">Update</button>
+            </form>
+         </td>
+         <td th:text="${item.Totalprice}"></td>
+         <td>
+         <form th:action="@{/cart/remove}" method="post">
+              <input type="hidden" name="id" th:value="${item.product.id}"/>
+              <button type="submit">Remove</button>
+            </form>
+         </td>
+       </tr>
+    </tbody>
+</table>
+
+</body>
+
+</html>

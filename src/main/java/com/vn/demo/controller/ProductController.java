@@ -10,11 +10,14 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.vn.demo.model.Category;
 import com.vn.demo.model.Product;
@@ -38,11 +41,8 @@ public class ProductController {
 	
 	@RequestMapping("list")
 	public String shop(Model model) {
-		Page<Product> list = rep.findAll(PageRequest.of(0, 15));
+		List<Product> list = rep.findAll();
 		model.addAttribute("ProductList", list);
-		model.addAttribute("totalProduct1page", list.getSize());
-		model.addAttribute("totalProduct", list.getTotalElements());
-		model.addAttribute("page", list.getTotalPages());
 		/* List<Category> catelist = CategoryService.getFoodName(); */
 		model.addAttribute("animalfood", categoryService.getFoodName());
 		model.addAttribute("accessories", categoryService.getAccessoriesName());
@@ -83,6 +83,14 @@ public class ProductController {
 	    
 	    return "redirect:list";
 	  }
+	  @GetMapping("{id}")
+	  public String deleteProduct(@PathVariable("id") int id) {
+		  
+		  productService.deleteProduct(id);
+		  
+		  return "redirect:list";
+	  }
+	  
 	
 	
  }

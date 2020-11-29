@@ -85,7 +85,7 @@
      opacity: .8 
 }
  a {
-     color: white;
+     color: black;
      text-decoration: none;
      outline: none;
 }
@@ -142,12 +142,11 @@
      box-shadow: none !important 
 }
 .productitem{
-	 width:200px;
-	 height:200px;
+	 width: 180px;
+	 height: 200px;
 }
 .productitem2{
-	width:240px;
-	height:235px;
+	height: 210px;
 }
 /*------------------------------------------------------------------ LOADER -------------------------------------------------------------------*/
  #back-to-top {
@@ -2613,6 +2612,7 @@
 	border: none;
 }
 .textarealabl{
+width:100%;
    border: none;
    overflow: visible;
    resize: none;
