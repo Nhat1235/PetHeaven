@@ -2,18 +2,19 @@ package com.vn.demo.model;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-import lombok.Data;
 
 @Entity // Đánh dấu đây là table trong db
 @Table(name = "Customer")
-@Data
 public class Customer implements Serializable {
 
 	/**
@@ -25,9 +26,9 @@ public class Customer implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="CustomerID")
 	private Integer id;
-    
-	@Column(name="IMAGE")
-	private String anh;
+	
+	@Column(name="CustomerName")
+	private String customerName;
 	
 	@Column(name="ADRESS")
 	private String diachi;
@@ -35,16 +36,56 @@ public class Customer implements Serializable {
 	@Column(name="PHONE")
 	private String SDT;
 	
-	@Column(name="EMAIL")
-	private String email;
+	@OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "AccountId", referencedColumnName = "id")
+    private Account account;
 
-	public Customer() {
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public String getCustomerName() {
+		return customerName;
+	}
+
+	public void setCustomerName(String customerName) {
+		this.customerName = customerName;
+	}
+
+	public String getDiachi() {
+		return diachi;
+	}
+
+	public void setDiachi(String diachi) {
+		this.diachi = diachi;
+	}
+
+	public String getSDT() {
+		return SDT;
+	}
+
+	public void setSDT(String sDT) {
+		SDT = sDT;
+	}
+
+	public Account getAccount() {
+		return account;
+	}
+
+	public void setAccount(Account account) {
+		this.account = account;
 	}
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
- 
+	
+	
+	
 	
 
 

@@ -1,9 +1,10 @@
 (function($) {
     "use strict";
 	
-	/* ..............................................
-	   Loader 
-	   ................................................. */
+	/*
+	 * .............................................. Loader
+	 * .................................................
+	 */
 	$(window).on('load', function() {
 		$('.preloader').fadeOut();
 		$('#preloader').delay(550).fadeOut('slow');
@@ -12,9 +13,10 @@
 		});
 	});
 
-	/* ..............................................
-	   Fixed Menu
-	   ................................................. */
+	/*
+	 * .............................................. Fixed Menu
+	 * .................................................
+	 */
 
 	$(window).on('scroll', function() {
 		if ($(window).scrollTop() > 50) {
@@ -24,9 +26,10 @@
 		}
 	});
 
-	/* ..............................................
-	   Gallery
-	   ................................................. */
+	/*
+	 * .............................................. Gallery
+	 * .................................................
+	 */
 
 	$('#slides-shop').superslides({
 		inherit_width_from: '.cover-slides',
@@ -37,9 +40,10 @@
 
 	$(".cover-slides ul li").append("<div class='overlay-background'></div>");
 
-	/* ..............................................
-	   Map Full
-	   ................................................. */
+	/*
+	 * .............................................. Map Full
+	 * .................................................
+	 */
 
 	$(document).ready(function() {
 		$(window).on('scroll', function() {
@@ -57,9 +61,10 @@
 		});
 	});
 
-	/* ..............................................
-	   Special Menu
-	   ................................................. */
+	/*
+	 * .............................................. Special Menu
+	 * .................................................
+	 */
 
 	var Container = $('.container');
 	Container.imagesLoaded(function() {
@@ -76,18 +81,20 @@
 		});
 	});
 
-	/* ..............................................
-	   BaguetteBox
-	   ................................................. */
+	/*
+	 * .............................................. BaguetteBox
+	 * .................................................
+	 */
 
 	baguetteBox.run('.tz-gallery', {
 		animation: 'fadeIn',
 		noScrollbars: true
 	});
 
-	/* ..............................................
-	   Offer Box
-	   ................................................. */
+	/*
+	 * .............................................. Offer Box
+	 * .................................................
+	 */
 
 	$('.offer-box').inewsticker({
 		speed: 3000,
@@ -99,17 +106,19 @@
 		delay_after: 1000
 	});
 
-	/* ..............................................
-	   Tooltip
-	   ................................................. */
+	/*
+	 * .............................................. Tooltip
+	 * .................................................
+	 */
 
 	$(document).ready(function() {
 		$('[data-toggle="tooltip"]').tooltip();
 	});
 
-	/* ..............................................
-	   Owl Carousel Instagram Feed
-	   ................................................. */
+	/*
+	 * .............................................. Owl Carousel Instagram
+	 * Feed .................................................
+	 */
 
 	$('.main-instagram').owlCarousel({
 		loop: true,
@@ -136,9 +145,10 @@
 		}
 	});
 
-	/* ..............................................
-	   Featured Products
-	   ................................................. */
+	/*
+	 * .............................................. Featured Products
+	 * .................................................
+	 */
 
 	$('.featured-products-box').owlCarousel({
 		loop: true,
@@ -165,9 +175,10 @@
 		}
 	});
 
-	/* ..............................................
-	   Scroll
-	   ................................................. */
+	/*
+	 * .............................................. Scroll
+	 * .................................................
+	 */
 
 	$(document).ready(function() {
 		$(window).on('scroll', function() {
@@ -186,27 +197,22 @@
 	});
 
 
-	/* ..............................................
-	   Slider Range
-	   ................................................. */
+	/*
+	 * .............................................. Slider Range
+	 * .................................................
+	 */
 /*
-	$(function() {
-		$("#slider-range").slider({
-			range: true,
-			min: 0,
-			max: 100,
-			values: [0, 2],
-			slide: function(event, ui) {
-				$("#amount").val(ui.values[0]+"" + " - " + ui.values[1]+" triệu đồng");
-			}
-		});
-		$("#amount").val($("#slider-range").slider("values", 0)+" triệu đồng" +
-			" - " + $("#slider-range").slider("values", 1)+"  đồng");
-	});*/
+ * $(function() { $("#slider-range").slider({ range: true, min: 0, max: 100,
+ * values: [0, 2], slide: function(event, ui) { $("#amount").val(ui.values[0]+"" + " - " +
+ * ui.values[1]+" triệu đồng"); } });
+ * $("#amount").val($("#slider-range").slider("values", 0)+" triệu đồng" + " - " +
+ * $("#slider-range").slider("values", 1)+" đồng"); });
+ */
 
-	/* ..............................................
-	   NiceScroll
-	   ................................................. */
+	/*
+	 * .............................................. NiceScroll
+	 * .................................................
+	 */
 
 	$(".brand-box").niceScroll({
 		cursorcolor: "#9b9b9c",
@@ -214,3 +220,66 @@
 	
 	
 }(jQuery));
+
+$(function(){
+	window.onload = function() {
+		
+		 $('.price').each(function(){
+		    	let price = $(this).text();
+		    	let oPrice = new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(price);
+		    	$(this).text(oPrice);	
+		    });
+		 
+		 $('.total').each(function(){
+		    	let price = $(this).text();
+		    	let oPrice = new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(price);
+		    	$(this).text(oPrice);	
+		    });
+		 
+		 
+		 var total = 0;
+			
+			$('tbody tr').each(function(){
+				var t = $(this).find('.total2').val();
+				total = parseInt(total) + parseInt(t);
+				console.log(total);
+				total2 = new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(total);
+			    
+			})
+			
+			var totalPrice = $('#totalPrice, #totalFinal').html(total2);
+		 
+	}
+	
+	
+	
+/*	    total = parseInt(total) + parseInt(price1);
+	console.log(total);*/
+	
+	$('body').on('change','.quantity', function(e){
+		var quantity = $(this).val();
+		var price = $(this).parent().parent().find('.priceHidden').val();
+		
+		var priceNew = new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(parseInt(quantity) * price);
+		
+//		console.log(parseInt(quantity) * price);
+		
+		$(this).parent().parent().find('.total').html(priceNew);
+		
+		$(this).parent().parent().find('.total2').val(parseInt(quantity) * price);
+		
+		var total = 0;
+		
+		$('tbody tr').each(function(){
+			var t = $(this).find('.total2').val();
+			total = parseInt(total) + parseInt(t);
+			console.log(total);
+			total2 = new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(total);
+		    
+		})
+		
+		var totalPrice = $('#totalPrice, #totalFinal').html(total2);
+
+	
+	});
+})

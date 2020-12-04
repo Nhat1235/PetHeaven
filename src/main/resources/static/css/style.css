@@ -1821,15 +1821,15 @@
      padding: 10px 0px;
 }
   .list-group-item[data-toggle="collapse"]::after {
-    width: 0;
+     width: 0;
      height: 0; 
      font-family: "Font Awesome 5 Free";
-    content: "\f107";
-    display: inline-block;
-    padding-right: 3px;
-      vertical-align: middle;
+     content: "\f107";
+     display: inline-block;
+     padding-right: 3px;
+     vertical-align: middle;
      font-weight: 900;
-      position: absolute;
+     position: absolute;
      top: calc(50% - 12px); 
      right: 10px; 
      -webkit-transition: top .2s,-webkit-transform .2s;
@@ -2102,7 +2102,7 @@
  .coupon-box .input-group .input-group-append .btn-theme:hover {
      background: #FFCC66;
 }
- .update-box input[type="submit"]{
+ .update-box a{
      background: #000000;
      border: medium none;
      border-radius: 0;
@@ -2117,7 +2117,7 @@
      height: 50px;
      line-height: 40px;
      margin-right: 15px;
-     padding: 0 20px;
+     padding: 5px;
      text-shadow: none;
      text-transform: uppercase;
      -webkit-transition: all 0.3s ease 0s;
@@ -2125,7 +2125,7 @@
      white-space: nowrap;
      width: inherit;
 }
- .update-box input[type="submit"]:hover{
+ .update-box a:hover{
      background: #FFCC66;
 }
  .order-box h3{
@@ -2542,10 +2542,10 @@
  .price-box-bar{
      margin-bottom: 30px;
 }
- .price-box-bar a{
-     padding: 10px 20px;
+ .price-box-bar button{
+     padding: 10px;
      font-weight: 700;
-     color: #ffffff;
+     color: white;
      border: none;
 }
  .add-to-btn .add-comp {

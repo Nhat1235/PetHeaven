@@ -1,6 +1,9 @@
-<html xmlns:th="http://www.thymeleaf.org">
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1" isELIgnored="false"%>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c"  %>   
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 <style>
@@ -73,33 +76,25 @@ h2 {
 
 </style>
 </head>
-
-<script type="text/javascript">
-
-$(":input").bind('keyup mouseup', function () {
-    alert("changed");            
-});
-
-</script>
 <body>
 <div class="container">
-
 <h1>Cart</h1>
+
 <table>
 
- <tr th:each="entry : *{cart}">
-       <td th:text="*{entry.key}"></td>
-        <td th:text="*{entry.value}"></td>
-       <td> <input type="number" size="1" value="1" min="1" step="1"></td>
-        <td><a th:href="@{/cart/delete/{key}(key=${entry.key})}">Delete</a></td>
-        
-   </tr>
-
+<c:forEach var="entry" items="${cart}">
+<tr>
+  <td>Name: <c:out value="${entry.key}"/><td>
+  <td>Price: <c:out value="${entry.value}"/>$</td>
+  <td><a href="/delete?key=${entry.key}">Delete</a></td>
+ 
+</c:forEach>
 </table>
-<h2>Total amount :<a th:text="*{sum}"></a> </h2>
+<h2>Total amount : ${sum} $</h2>
+
 
 <p>
-<a th:href="@{/cart/home}">Continue shopping</a> 
+<a href="/home">Continue shopping</a> 
 </p>
 
 </div>

@@ -11,10 +11,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import org.springframework.format.annotation.DateTimeFormat;
-
-
-import javax.persistence.Table;
 
 @Entity
 @Table(name = "Product")
@@ -54,6 +50,25 @@ public class Product {
 	private Category categoryId;
 
 	
+
+	public Product() {
+		super();
+	}
+
+	public Product(Integer id, String name, String detail, double price, String image, String image1, String image2,
+			Date createDate, boolean status, Category categoryId) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.detail = detail;
+		this.price = price;
+		this.image = image;
+		this.image1 = image1;
+		this.image2 = image2;
+		this.createDate = createDate;
+		this.status = status;
+		this.categoryId = categoryId;
+	}
 
 	public String getImage1() {
 		return image1;
@@ -96,7 +111,8 @@ public class Product {
 	}
 
 	public double getPrice() {
-	return price;
+		
+	    return price;
 	}
 
 	public void setPrice(double price) {

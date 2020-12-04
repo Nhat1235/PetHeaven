@@ -3,77 +3,78 @@ package com.vn.demo.model;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Cart {
-	private final List<CartItem> items;
-	private double total;
+import com.vn.demo.model.Product;
 
+public class Cart {
+//quan ly sp va sl sp
+	private final List<CartItem> items;//san pham
+	private float total;
 	public Cart() {
-		super();
-		items = new ArrayList<CartItem>();
+		items = new ArrayList<CartItem>();// khoi tao cac item
 		total=0;
 	}
-
-	public CartItem getItem(Product product) {
+	//ham lay ve item
+	public CartItem getItem(Product p) {
 		for (CartItem item : items) {
-			if (item.getProduct().getId() == product.getId()) {
+			if(item.getProduct().getId()==p.getId()) {// đã tồn tại số luongj trong gio hang
 				return item;
 			}
 		}
-		return null;
+		return null;// k 
 	}
-
-	public List<CartItem> getItems() {
+	//lay ve tat ca item item
+	public List<CartItem> getItems(){
 		return items;
 	}
-
+	//lay  so luong item
 	public int getItemCount() {
 		return items.size();
 	}
-
+	//them 1 sp
 	public void addItem(CartItem item) {
-		addItem(item.getProduct(), item.getQuantity());
+		addItem(item.getProduct(),item.getQuantity());
 	}
-
-	public void addItem(Product product, int quantity) {
-		CartItem item = getItem(product);
-		if (item != null) {
-			item.setQuantity(item.getQuantity() + quantity);
-		} else {
-			item = new CartItem(product);
-			item.setQuantity(quantity);
-			items.add(item);
+	// them item voi so luong cho truoc
+	public void addItem(Product p, int quantity) {
+		CartItem item = getItem(p);
+		if(item!=null) {
+			item.setQuantity(item.getQuantity()+quantity);// so luong cu+ so luong moi
+		}else {// nếu chưa có item
+			item = new CartItem(p); //tao 1 sp moi
+			item.setQuantity(quantity);// set so luong sl
+			items.add(item);// them vao danh sach item
 		}
 	}
-	
-	public void updateItem(Product product, int quantity) {
-		CartItem item = getItem(product);
+	//sua sp
+	public void updateItem(Product p , int quantity) {
+		CartItem item = getItem(p);// lay ve san pham can update
 		if(item!=null) {
 			item.setQuantity(quantity);
 		}
+		
 	}
-	public void removeItem(Product product) {
-		CartItem item = getItem(product);
-		if(item !=null) {
-			items.remove(item);
+	//xoa sp
+	public void removeItem(Product p) {
+		CartItem item = getItem(p);// lay danh sach san pham
+		if(item!=null) {
+			items.remove(item);// xoa	
 		}
 	}
+	//xoa tat ca sp
 	public void clear() {
 		items.clear();
-		total = 0;
+		total=0;
 	}
+	//kiem tra gio hang co trong hay k
 	public boolean isEmpty() {
 		return items.isEmpty();
 	}
-
+	// lay ve tong tien
 	public double getTotal() {
-		total=0;
-		for(CartItem item : items) {
-			total += item.getTotalprice();
+		total = 0;
+		for (CartItem item : items) {
+			/* total += item.getSubTotal(); */
 		}
 		return total;
-	}
-
-	public void setTotal(double total) {
-		this.total = total;
 	}
 }

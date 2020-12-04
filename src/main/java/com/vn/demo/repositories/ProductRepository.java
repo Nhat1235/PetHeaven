@@ -14,7 +14,7 @@ import com.vn.demo.model.Category;
 import com.vn.demo.model.Product;
 @Repository
 public interface ProductRepository extends JpaRepository<Product, Integer> {
-
+	Product getByName(String name);
 	
 	/*
 	 * @Query(value="select * from product where categoryid =:categoryId",countQuery

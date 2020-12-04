@@ -26,6 +26,29 @@ public class OrderDetail {
 	@JoinColumn(name="OrderId")
 	private Orders IdOrder;
 
+	@Column(name="quantity")
+	private Integer quantity;
+	
+	@Column(name="totalPrice")
+	private Float totalPrice;
+	
+	
+	public Integer getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(Integer quantity) {
+		this.quantity = quantity;
+	}
+
+	public Float getTotalPrice() {
+		return totalPrice;
+	}
+
+	public void setTotalPrice(Float totalPrice) {
+		this.totalPrice = totalPrice;
+	}
+
 	public Integer getId() {
 		return id;
 	}

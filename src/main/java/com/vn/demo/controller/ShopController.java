@@ -33,11 +33,11 @@ public class ShopController {
 	@RequestMapping("")
 	public String shop(Model model) {
 //		PageWrapper<Product> list = new PageWrapper<Product>(rep.findAll(PageRequest.of(0, 13)),"");
-		Page<Product> list =  rep.findAll(PageRequest.of(0, 15));
+		List<Product> list =  rep.findAll();
 		model.addAttribute("ProductList", list);
-		model.addAttribute("totalProduct1page", list.getSize());
+		/* model.addAttribute("totalProduct1page", list.getSize()); */
 //		model.addAttribute("totalProduct", list.getTotalElements());
-		model.addAttribute("page", list.getTotalPages());
+		/* model.addAttribute("page", list.getTotalPages()); */
 		/* List<Category> catelist = CategoryService.getFoodName(); */
 		model.addAttribute("animalfood", CategoryService.getFoodName());
 		model.addAttribute("accessories", CategoryService.getAccessoriesName());

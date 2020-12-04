@@ -18,9 +18,11 @@ ROLE nvarchar(50) null,
 
 create table Customer (
 CustomerID int identity(1,1) primary key,
-IMAGE varchar(255) null,
+CustomerName nvarchar(200) null,
 ADRESS nvarchar(2000) null, 
 PHONE varchar(20) null,
+AccountId int null,
+foreign key (AccountId) references Account(Id) on delete set null on update cascade,
 )
 
 create table Category(
@@ -49,6 +51,7 @@ CUSTOMER_ID int null,
 foreign key (Customer_Id) references Customer(CustomerID) on delete set null on update cascade,
 DATE date null,
 STATUS bit,
+FinalPrice float null,
 )
 
 create table OrderDetail(
@@ -58,12 +61,11 @@ foreign key (OrderId) references Orders(OrdersID) on delete set null on update c
 PRODUCTID int null,
 foreign key (ProductId) references Product(ProductID) on delete set null on update cascade, 
 QUANTITY int null,
+TotalPrice float null,
 )
 
 
 ---insert
-
-insert into Customer values (null,N'Số nhà 41,ngõ Trại Găng, phường Thanh Nhàn, quận Hai Bà Trưng, Hà Nội','0926881894')
 
 insert into Category values (N'Phụ kiện',N'Chuồng,nhà cho chó')
 insert into Category values (N'Phụ kiện',N'Chuồng,nhà cho mèo')
@@ -109,7 +111,9 @@ select * from Customer
 select * from Category
 select * from Product
 
-delete product;
+--delete product;
+
+
 
 update account set role = 'ROLE_ADMIN'
 
